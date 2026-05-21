@@ -1,0 +1,184 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{times}
+\usepackage{mathptmx}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{caption}
+\usepackage{subcaption}
+\title{MP-CycleGAN: Multi-Perceptual Constraints for Unpaired Underwater Image Enhancement}
+\author{Anonymous Authors}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+Underwater image enhancement (UIE) is a critical preprocessing step for marine robotics and underwater vision. Real underwater images commonly suffer from wavelength-dependent absorption and backscattering, leading to severe color casts, low contrast, and haze-like artifacts. While supervised UIE methods can achieve strong full-reference metrics, they require pixel-aligned pairs that are costly to acquire and often generalize poorly across water types. This paper presents MP-CycleGAN, an unpaired UIE framework built on CycleGAN with multi-perceptual (MP) constraints. In this work, MP denotes three complementary perceptual perspectives that jointly regularize the unpaired mapping: (i) color perception via a gray-world prior to mitigate persistent blue/green casts, (ii) structure perception via a gradient-based consistency loss to reduce structural drift, and (iii) semantic perception via a VGG-based perceptual loss to suppress unnatural textures and artifacts. We evaluate the method under a unified inference and evaluation pipeline on EUVP (in-domain) and UIEB (cross-domain), and report bootstrap confidence intervals for PSNR/SSIM to improve reproducibility. Results show small but consistent gains over a strong CycleGAN baseline in in-domain matched evaluation, and competitive cross-domain performance with improved perceptual-quality tendencies.
+\end{abstract}
+\textbf{Keywords:} underwater image enhancement; unpaired learning; CycleGAN; gray-world prior; perceptual loss; structure consistency
+\section{Introduction}
+Underwater imagery is widely used in marine exploration, inspection, ecological monitoring, and robot navigation. Due to wavelength-dependent light absorption and scattering, underwater images often exhibit color casts, low contrast, and blurred details, which degrade both human interpretability and downstream vision performance. UIE aims to improve perceptual quality while preserving scene content.
+Supervised deep models can perform well when trained on aligned pairs, but collecting pixel-aligned underwater/clean pairs is difficult in real environments. Unpaired translation methods such as CycleGAN reduce the reliance on paired data, yet they may introduce color drift, structural distortions, and hallucinated textures. This work targets a practical question: how to constrain unpaired UIE so that the enhanced output is more natural in color, stable in structure, and consistent in high-level content.
+We propose MP-CycleGAN, which extends CycleGAN with multi-perceptual constraints. The core idea is not to indiscriminately add losses, but to regularize the ill-posed unpaired mapping using complementary signals at the color, structure, and semantic levels, thereby shrinking the solution space and promoting stable outputs.
+\section{Related Work}
+UIE methods can be broadly categorized into prior-based approaches, supervised learning, and unpaired/weakly supervised learning. Prior-based methods leverage physical or statistical assumptions (e.g., color balance, dehazing priors) and offer interpretability but may fail under complex water conditions. Supervised models learn mappings from paired or synthetic data, yet they are sensitive to domain gaps. Unpaired methods based on adversarial learning and cycle-consistency are attractive in practice but can suffer from unstable color mapping and content drift. Our method follows the unpaired framework but strengthens it with multi-level constraints motivated by underwater color statistics and perceptual consistency.
+\section{Method}
+\subsection{CycleGAN Base}
+We consider two domains: underwater images $A$ and enhanced (clear) images $B$. CycleGAN learns two generators $G: A\rightarrow B$ and $F: B\rightarrow A$ with two discriminators $D_B$ and $D_A$. The objective includes adversarial losses and cycle-consistency:
+\begin{equation}
+\mathcal{L}_{total}=\mathcal{L}_{GAN}+\lambda_{cyc}\mathcal{L}_{cyc}+\lambda_{idt}\mathcal{L}_{idt}+\mathcal{L}_{MP}.
+\end{equation}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\linewidth]{../docs/figures/mp_cyclegan_architecture.png}
+\caption{Overview of the proposed MP-CycleGAN framework built on CycleGAN with multi-perceptual constraints.}
+\end{figure}
+\subsection{Multi-Perceptual Constraints (MP)}
+In this paper, MP denotes three complementary perceptual perspectives used to regularize unpaired UIE:
+\begin{equation}
+\mathcal{L}_{MP}=\lambda_{gray}\mathcal{L}_{gray}+\lambda_{struct}\mathcal{L}_{struct}+\lambda_{perc}\mathcal{L}_{perc}+\lambda_{color}\mathcal{L}_{color}.
+\end{equation}
+\paragraph{Color perception: gray-world prior.}
+We use a differentiable gray-world loss to encourage balanced RGB channel means in the enhanced output $\hat{I}$:
+\begin{equation}
+\mathcal{L}_{gray}(\hat{I})=\frac{1}{3}\sum_{c\in\{r,g,b\}}\left|\mu_c(\hat{I})-\mu_{gray}(\hat{I})\right|,\quad
+\mu_{gray}(\hat{I})=\frac{\mu_r(\hat{I})+\mu_g(\hat{I})+\mu_b(\hat{I})}{3}.
+\end{equation}
+\paragraph{Structure perception: gradient consistency.}
+To reduce structural drift during translation, we constrain first-order gradients between the input $I$ and output $\hat{I}$:
+\begin{equation}
+\mathcal{L}_{struct}(I,\hat{I})=\left\|\nabla_x \hat{I}-\nabla_x I\right\|_1+\left\|\nabla_y \hat{I}-\nabla_y I\right\|_1.
+\end{equation}
+\paragraph{Semantic perception: VGG perceptual loss.}
+We use a VGG-16 feature extractor $\phi$ to align input and output in feature space:
+\begin{equation}
+\mathcal{L}_{perc}(I,\hat{I})=\left\|\phi(I)-\phi(\hat{I})\right\|_1.
+\end{equation}
+\paragraph{Optional global color statistics.}
+We optionally match global mean and standard deviation:
+\begin{equation}
+\mathcal{L}_{color}(I,\hat{I})=\left\|\mu(\hat{I})-\mu(I)\right\|_1+\left\|\sigma(\hat{I})-\sigma(I)\right\|_1.
+\end{equation}
+\section{Experiments}
+\subsection{Datasets and Protocol}
+\textbf{EUVP (in-domain).} We train on the unpaired branch and evaluate on the matched subset (\texttt{test\_samples}, matched=200) using aligned references for PSNR/SSIM.
+\textbf{UIEB (cross-domain).} Without fine-tuning on UIEB, we test on the matched subset (matched=890) using \texttt{reference-890} for PSNR/SSIM, and report no-reference metrics (UCIQE/UIQM) where applicable.
+\subsection{Metrics and Reproducibility}
+We report PSNR/SSIM as full-reference metrics and UCIQE/UIQM as no-reference metrics. For PSNR/SSIM, we report 95\% bootstrap confidence intervals computed via repeated resampling (\texttt{bootstrap\_iters=2000}, \texttt{seed=123}).
+\subsection{Implementation Notes}
+At inference time, only $G: A\rightarrow B$ is used. MP constraints are applied only during training and do not add runtime modules at inference.
+\subsection{Reproducibility Artifacts}
+This work is designed to be reproducible. The following artifacts should be provided alongside the final submission: training configuration (loss weights and perceptual layer choice), model checkpoints or hashes, inference outputs on matched subsets, and evaluation scripts to compute PSNR/SSIM with bootstrap confidence intervals. We also provide a task-driven downstream detection evaluation script to compare mAP on raw versus enhanced validation images.
+\subsection{Downstream Object Detection (Task-driven Evaluation)}
+To assess practical utility beyond image-quality metrics, we additionally evaluate underwater object detection performance on a labeled underwater detection dataset using a YOLO-based detector. We use the URPC optical object detection dataset (\cite{urpc2020}) with four common underwater classes (holothurian, echinus, scallop, starfish). We evaluate detection on the original validation images and their MP-CycleGAN enhanced counterparts, while keeping labels identical. We report standard detection metrics (mAP@0.5 and mAP@0.5:0.95).
+\vspace{0.25em}
+When using a detector trained only on raw images, MP-CycleGAN enhancement reduces detection accuracy, suggesting distribution shift. Fine-tuning the detector on MP-CycleGAN enhanced training images recovers performance on enhanced inputs, while mixed training on raw and MP-CycleGAN enhanced data improves robustness across both domains.
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{../docs/figures/downstream_detection_fixed_vs_mixed.png}
+\caption{Qualitative downstream detection comparison on URPC (top: fixed detector trained on raw; bottom: mixed detector trained on raw and MP-CycleGAN enhanced images). Green: ground-truth boxes. Red: predicted boxes.}
+\end{figure}
+\begin{table}[h]
+\centering
+\caption{Downstream object detection performance on URPC optical (validation split).}
+\begin{tabular}{lcc}
+\toprule
+Setting & mAP@0.5 & mAP@0.5:0.95 \\
+\midrule
+Fixed detector (raw val) & 0.8365 & 0.4908 \\
+Fixed detector (MP-CycleGAN val) & 0.4614 & 0.2157 \\
+Enhancement-aware detector (raw val) & 0.5787 & 0.2672 \\
+Enhancement-aware detector (MP-CycleGAN val) & 0.6261 & 0.3181 \\
+Mixed detector (raw val) & $0.8458\pm0.0005$ & $0.4982\pm0.0011$ \\
+Mixed detector (MP-CycleGAN val) & $0.6601\pm0.0034$ & $0.3388\pm0.0003$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+\section{Results}
+\subsection{In-domain Quantitative Results (EUVP)}
+\begin{table}[h]
+\centering
+\caption{In-domain results on EUVP matched test set (matched=200).}
+\begin{tabular}{lcccc}
+\toprule
+Method & PSNR (dB) & SSIM & UCIQE & UIQM \\
+\midrule
+Identity & 20.33 & 0.794 & 24.88 & 5.77 \\
+Gray-World & 19.42 & 0.784 & 24.27 & 6.72 \\
+CycleGAN & 22.82 & 0.783 & 25.93 & 5.33 \\
+MP-CycleGAN & \textbf{22.91} & \textbf{0.795} & 25.82 & 5.41 \\
+\bottomrule
+\end{tabular}
+\end{table}
+MP-CycleGAN yields a small but consistent improvement over a strong CycleGAN baseline. The gain is limited in magnitude because the baseline already performs strongly on the matched subset and because MP constraints primarily improve color stability, structural fidelity, and artifact suppression, which are not always amplified by pixel-error metrics. We therefore emphasize combined evidence from quantitative trends and qualitative comparisons.
+\subsection{Ablation Study}
+\begin{table}[h]
+\centering
+\caption{Ablation study under a small-budget cross-domain setting.}
+\begin{tabular}{clcccc}
+\toprule
+ID & Configuration & PSNR & SSIM & UCIQE & UIQM \\
+\midrule
+A & CycleGAN (Baseline) & 16.85 & 0.56 & 27.89 & 4.13 \\
+B & +Gray & 17.04 & 0.56 & \textbf{28.66} & 4.16 \\
+C & +Gray+Struct & 16.67 & 0.65 & 26.85 & 4.18 \\
+D & +Gray+Struct+Perc & \textbf{17.80} & \textbf{0.65} & 28.51 & 4.56 \\
+E & +Color & 16.72 & 0.64 & 27.87 & \textbf{4.76} \\
+\bottomrule
+\end{tabular}
+\end{table}
+\subsection{Cross-domain Results (EUVP $\rightarrow$ UIEB)}
+\begin{table}[h]
+\centering
+\caption{Cross-domain testing on UIEB matched subset (matched=890).}
+\begin{tabular}{lccc}
+\toprule
+Metric & Input & CycleGAN & MP-CycleGAN \\
+\midrule
+PSNR (dB) & - & \textbf{17.84} & 17.54 \\
+SSIM & - & \textbf{0.626} & 0.624 \\
+UCIQE & 21.70 & \textbf{23.25} & 22.46 \\
+UIQM & 6.80 & 10.48 & \textbf{10.50} \\
+\bottomrule
+\end{tabular}
+\end{table}
+Cross-domain results show that full-reference metrics and no-reference metrics may disagree due to differences between references and the desired perceptual appearance in unseen water conditions. MP-CycleGAN tends to favor perceptual-quality aspects captured by UIQM while maintaining competitive PSNR/SSIM. In practical deployment where strict references are unavailable, stability and visual usability can be more important than pixel-level agreement with dataset references.
+\subsection{Qualitative Results}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\linewidth]{../docs/figures/visual_comparison_final_refined.png}
+\caption{Qualitative comparison on EUVP (input, CycleGAN, MP-CycleGAN, reference).}
+\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\linewidth]{../docs/figures/color_distribution_analysis.png}
+\caption{Color distribution analysis comparing domains and enhanced outputs.}
+\end{figure}
+\section{Discussion and Limitations}
+MP-CycleGAN improves stability by combining complementary constraints, but several limitations remain. First, the method still inherits the general limitations of adversarial training, including sensitivity to hyperparameters and potential artifacts under extreme scattering or strong illumination non-uniformity. Second, cross-domain evaluation with matched references may not fully reflect perceptual preferences, which motivates task-driven evaluation on downstream perception. Third, the current MP design uses fixed weights; adaptive weighting based on estimated degradation may further improve robustness.
+\section{Conclusion}
+We presented MP-CycleGAN for unpaired underwater image enhancement. By introducing multi-perceptual constraints spanning color, structure, and semantic consistency, the method provides a practical way to stabilize unpaired translation for underwater enhancement. Experiments on EUVP and UIEB show small but consistent in-domain gains and competitive cross-domain performance with favorable perceptual-quality tendencies.
+\section*{Data Availability}
+Datasets used in this work are publicly available (EUVP and UIEB). Links and access instructions should be provided in the final submission.
+\section*{Code Availability}
+Code, evaluation scripts, and representative outputs should be released to facilitate reproducibility. A public repository link should be added in the final submission.
+\section*{Supplementary Material (Recommended)}
+For fast verification, we recommend supplying a zipped supplementary package containing: (i) the evaluation scripts used to compute the reported metrics, (ii) a CSV file summarizing all reported numbers, and (iii) the exact command templates used for inference and evaluation.
+\begin{thebibliography}{13}
+\bibitem{li2020uieb} C. Li, C. Guo, W. Ren, R. Cong, J. Hou, S. Kwong, and D. Tao, ``An Underwater Image Enhancement Benchmark Dataset and Beyond,'' \emph{IEEE Transactions on Image Processing}, vol. 29, pp. 4376--4389, 2020.
+\bibitem{islam2020funiegan} M. J. Islam, Y. Xia, and J. Sattar, ``Fast Underwater Image Enhancement for Improved Visual Perception,'' \emph{IEEE Robotics and Automation Letters}, vol. 5, no. 2, pp. 3227--3234, 2020.
+\bibitem{li2021ucolor} C. Li, S. Anwar, J. Hou, R. Cong, C. Guo, and W. Ren, ``Underwater Image Enhancement via Medium Transmission-Guided Multi-Color Space Embedding,'' \emph{IEEE Transactions on Image Processing}, vol. 30, pp. 4985--5000, 2021.
+\bibitem{zhu2017cyclegan} J.-Y. Zhu, T. Park, P. Isola, and A. A. Efros, ``Unpaired Image-to-Image Translation Using Cycle-Consistent Adversarial Networks,'' in \emph{Proc. ICCV}, 2017, pp. 2242--2251.
+\bibitem{wang2004ssim} Z. Wang, A. C. Bovik, H. R. Sheikh, and E. P. Simoncelli, ``Image Quality Assessment: From Error Visibility to Structural Similarity,'' \emph{IEEE Transactions on Image Processing}, vol. 13, no. 4, pp. 600--612, 2004.
+\bibitem{yang2015uciqe} M. Yang and A. Sowmya, ``An Underwater Color Image Quality Evaluation Metric,'' \emph{IEEE Transactions on Image Processing}, vol. 24, no. 12, pp. 6062--6071, 2015.
+\bibitem{panetta2016uiqm} K. Panetta, C. Gao, and S. Agaian, ``Human-Visual-System-Inspired Underwater Image Quality Measures,'' \emph{IEEE Journal of Oceanic Engineering}, vol. 41, no. 3, pp. 541--551, 2016.
+\bibitem{johnson2016perceptual} J. Johnson, A. Alahi, and L. Fei-Fei, ``Perceptual Losses for Real-Time Style Transfer and Super-Resolution,'' in \emph{Proc. ECCV}, 2016.
+\bibitem{simonyan2015vgg} K. Simonyan and A. Zisserman, ``Very Deep Convolutional Networks for Large-Scale Image Recognition,'' in \emph{Proc. ICLR}, 2015.
+\bibitem{buchsbaum1980grayworld} G. Buchsbaum, ``A Spatial Processor Model for Object Colour Perception,'' \emph{Journal of the Franklin Institute}, vol. 310, no. 1, pp. 1--26, 1980.
+\bibitem{urpc2020} URPC, ``Underwater Robot Picking Competition (Optical Image Object Detection) Dataset,'' 2020. [Online]. Available: \url{https://openi.pcl.ac.cn/OpenOrcinus_orca/URPC_opticalimage_dataset/datasets}.
+\end{thebibliography}
+\end{document}

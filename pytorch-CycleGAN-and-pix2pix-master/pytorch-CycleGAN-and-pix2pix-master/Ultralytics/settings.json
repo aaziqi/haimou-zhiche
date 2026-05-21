@@ -1,0 +1,21 @@
+{
+  "settings_version": "0.0.6",
+  "datasets_dir": "D:\\VScode\\Graduation project\\pytorch-CycleGAN-and-pix2pix-master\\pytorch-CycleGAN-and-pix2pix-master\\datasets",
+  "weights_dir": "weights",
+  "runs_dir": "runs",
+  "uuid": "708e8ff94f6b4c3cad8f449f3f1a567dd73da6feaa4a5f6f1c63e9ad7276d130",
+  "sync": true,
+  "api_key": "",
+  "openai_api_key": "",
+  "clearml": true,
+  "comet": true,
+  "dvc": true,
+  "hub": true,
+  "mlflow": true,
+  "neptune": true,
+  "raytune": true,
+  "tensorboard": false,
+  "wandb": false,
+  "vscode_msg": true,
+  "openvino_msg": true
+}

@@ -1,0 +1,176 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>面向计算机设计大赛的水下图像增强演示系统</title>
+        <style>
+            :root {
+                --bg: #07111f;
+                --panel: rgba(13, 29, 52, 0.88);
+                --panel-soft: rgba(22, 42, 74, 0.72);
+                --text: #f4f8ff;
+                --muted: #9cb4d3;
+                --accent: #4bc3ff;
+                --accent-soft: rgba(75, 195, 255, 0.16);
+                --border: rgba(120, 180, 255, 0.18);
+            }
+            * { box-sizing: border-box; }
+            body {
+                margin: 0;
+                font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+                background: radial-gradient(circle at top, #133763 0%, #07111f 55%, #050b15 100%);
+                color: var(--text);
+            }
+            .wrap { width: min(1200px, calc(100% - 40px)); margin: 0 auto; padding: 36px 0 56px; }
+            .hero {
+                background: linear-gradient(135deg, rgba(28, 81, 142, 0.92), rgba(10, 23, 46, 0.96));
+                border: 1px solid var(--border);
+                border-radius: 24px;
+                padding: 32px;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+            }
+            .hero h1 { margin: 0 0 14px; font-size: 34px; line-height: 1.3; }
+            .hero p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.8; }
+            .hero-tags { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+            .tag {
+                padding: 8px 14px;
+                border-radius: 999px;
+                background: var(--accent-soft);
+                color: #dff5ff;
+                border: 1px solid rgba(75, 195, 255, 0.28);
+                font-size: 14px;
+            }
+            .metrics {
+                margin-top: 24px;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+                gap: 16px;
+            }
+            .metric-card {
+                background: var(--panel-soft);
+                border: 1px solid var(--border);
+                border-radius: 18px;
+                padding: 18px;
+            }
+            .metric-title { color: var(--muted); font-size: 14px; margin-bottom: 12px; }
+            .metric-value { font-size: 28px; font-weight: 700; color: #ffffff; }
+            .section-title { margin: 34px 0 16px; font-size: 24px; }
+            .section-desc { margin: 0 0 22px; color: var(--muted); line-height: 1.8; }
+            .case-card {
+                background: var(--panel);
+                border: 1px solid var(--border);
+                border-radius: 24px;
+                padding: 24px;
+                margin-bottom: 22px;
+                box-shadow: 0 18px 48px rgba(0, 0, 0, 0.2);
+            }
+            .case-header {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 18px;
+            }
+            .case-index {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                min-width: 88px;
+                height: 36px;
+                padding: 0 14px;
+                border-radius: 999px;
+                background: var(--accent-soft);
+                color: #dff5ff;
+                font-weight: 700;
+            }
+            .case-key { color: var(--muted); font-size: 14px; }
+            .image-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                gap: 18px;
+            }
+            .image-panel {
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid rgba(255, 255, 255, 0.06);
+                border-radius: 18px;
+                padding: 14px;
+            }
+            .image-title { margin-bottom: 12px; color: var(--muted); font-size: 14px; }
+            .image-panel img {
+                width: 100%;
+                height: 260px;
+                object-fit: contain;
+                background: rgba(255, 255, 255, 0.03);
+                border-radius: 14px;
+            }
+            .metric-list {
+                margin-top: 18px;
+                display: grid;
+                gap: 10px;
+            }
+            .row-metric {
+                display: flex;
+                justify-content: space-between;
+                gap: 16px;
+                padding: 12px 14px;
+                border-radius: 14px;
+                background: rgba(255, 255, 255, 0.03);
+                color: #dbe8ff;
+                font-size: 14px;
+            }
+            .footer {
+                margin-top: 28px;
+                color: var(--muted);
+                font-size: 13px;
+                line-height: 1.8;
+            }
+            @media (max-width: 720px) {
+                .wrap { width: min(100% - 24px, 1200px); }
+                .hero { padding: 22px; }
+                .hero h1 { font-size: 28px; }
+                .row-metric { flex-direction: column; }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <section class="hero">
+                <h1>面向计算机设计大赛的水下图像增强演示系统</h1>
+                <p>本报告面向计算机设计大赛展示场景，围绕水下图像增强模型的可视化演示、指标对比与样例输出进行统一包装，可直接用于作品演示、答辩展示和成果归档。</p>
+                <div class="hero-tags">
+                    <div class="tag">推荐赛道：人工智能应用</div>
+                    <div class="tag">模型权重：euvp_cyclegan_full</div>
+                    <div class="tag">权重版本：latest</div>
+                    <div class="tag">样例数量：1</div>
+                </div>
+                <div class="metrics"><div class='metric-card'><div class='metric-title'>平均 UCIQE 提升</div><div class='metric-value'>+5.1399</div></div><div class='metric-card'><div class='metric-title'>平均 UIQM 提升</div><div class='metric-value'>-4.9447</div></div><div class='metric-card'><div class='metric-title'>平均 PSNR 提升</div><div class='metric-value'>未计算</div></div><div class='metric-card'><div class='metric-title'>平均 SSIM 提升</div><div class='metric-value'>未计算</div></div></div>
+            </section>
+            <h2 class="section-title">系统亮点</h2>
+            <p class="section-desc">当前包装基于你现有的 CycleGAN 水下增强主框架，无需改动训练主干即可完成单图/批量增强、指标统计和展示页生成，适合作为参赛作品的演示层与答辩素材层。</p>
+            <h2 class="section-title">增强案例</h2>
+            <p class="section-desc">每个样例同时展示原始图像、增强结果以及可选参考图像，并给出 UCIQE、UIQM、PSNR、SSIM 等指标变化。</p>
+            
+            <section class='case-card'>
+                <div class='case-header'>
+                    <div class='case-index'>样例 01</div>
+                    <div class='case-key'>nm_0up</div>
+                </div>
+                <div class='image-grid'>
+                    <div class='image-panel'><div class='image-title'>原始水下图像</div><img src='assets/input/nm_0up.jpg' alt='input'></div>
+                    <div class='image-panel'><div class='image-title'>增强结果</div><img src='assets/output/nm_0up_fake.png' alt='output'></div>
+                    
+                </div>
+                <div class='metric-list'><div class='row-metric'><span>UCIQE</span><span>11.2274 → 16.3673 （变化 +5.1399）</span></div><div class='row-metric'><span>UIQM</span><span>11.8156 → 6.8708 （变化 -4.9447）</span></div></div>
+            </section>
+            
+            <div class="footer">
+                <div>报告生成时间：2026-04-03 18:40:42</div>
+                <div>原始推理结果目录：D:\VScode\Graduation project\pytorch-CycleGAN-and-pix2pix-master\pytorch-CycleGAN-and-pix2pix-master\competition_demo_outputs\smoke_test\inference_raw\euvp_cyclegan_full\test_latest</div>
+                <div>你可以直接打开当前 index.html 进行线下展示，或配合本地静态服务进行浏览器演示。</div>
+            </div>
+        </div>
+    </body>
+    </html>
+    

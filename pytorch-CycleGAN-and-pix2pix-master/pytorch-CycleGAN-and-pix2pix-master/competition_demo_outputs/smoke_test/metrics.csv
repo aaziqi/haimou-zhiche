@@ -1,0 +1,2 @@
+﻿key,input_file,output_file,reference_file,input_uciqe,output_uciqe,delta_uciqe,input_uiqm,output_uiqm,delta_uiqm,input_psnr,output_psnr,delta_psnr,input_ssim,output_ssim,delta_ssim
+nm_0up,assets/input/nm_0up.jpg,assets/output/nm_0up_fake.png,,11.2274,16.3673,5.1399,11.8156,6.8708,-4.9447,,,,,,

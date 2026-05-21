@@ -1,0 +1,4 @@
+Multi-perceptual (MP) constraints are introduced to stabilize unpaired underwater image enhancement.
+MP combines complementary cues: a gray-world color prior, gradient-based structure consistency, and VGG perceptual consistency.
+The proposed training-time constraints do not increase inference-time complexity.
+Unified in-domain and cross-domain evaluations on EUVP and UIEB support small but consistent gains and competitive generalization tendencies.

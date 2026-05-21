@@ -1,0 +1,35 @@
+{
+  "report_title": "面向计算机设计大赛的水下图像增强演示系统",
+  "track_name": "人工智能应用",
+  "checkpoint_name": "euvp_cyclegan_full",
+  "epoch": "latest",
+  "generated_at": "2026-04-03 18:40:42",
+  "raw_result_dir": "D:\\VScode\\Graduation project\\pytorch-CycleGAN-and-pix2pix-master\\pytorch-CycleGAN-and-pix2pix-master\\competition_demo_outputs\\smoke_test\\inference_raw\\euvp_cyclegan_full\\test_latest",
+  "summary": {
+    "image_count": 1,
+    "avg_delta_uciqe": 5.1399,
+    "avg_delta_uiqm": -4.9447,
+    "avg_delta_psnr": null,
+    "avg_delta_ssim": null
+  },
+  "records": [
+    {
+      "key": "nm_0up",
+      "input_file": "assets/input/nm_0up.jpg",
+      "output_file": "assets/output/nm_0up_fake.png",
+      "reference_file": "",
+      "input_uciqe": 11.2274,
+      "output_uciqe": 16.3673,
+      "delta_uciqe": 5.1399,
+      "input_uiqm": 11.8156,
+      "output_uiqm": 6.8708,
+      "delta_uiqm": -4.9447,
+      "input_psnr": null,
+      "output_psnr": null,
+      "delta_psnr": null,
+      "input_ssim": null,
+      "output_ssim": null,
+      "delta_ssim": null
+    }
+  ]
+}

@@ -1,0 +1,712 @@
+{
+  "ok": true,
+  "archives": [
+    {
+      "id": "detect_compare_2b5cff2134",
+      "type": "detect_compare",
+      "title": "下游检测对照案例",
+      "created_at": "2026-04-15 15:42:05",
+      "model_label": "下游检测器 (YOLO)",
+      "summary": "原图 2 vs 增强 1（Δ -1）。",
+      "input_url": "/runtime/enhance_jobs/enhance_646c994263/result/improved_mpcgan/assets/input/003203.jpg",
+      "cover_url": "/runtime/detect_compare_jobs/detect_compare_2b5cff2134/detect_vs.jpg",
+      "report_url": "/runtime/detect_compare_jobs/detect_compare_2b5cff2134/index.html",
+      "metrics_url": "/runtime/detect_compare_jobs/detect_compare_2b5cff2134/enhanced_detections.json",
+      "tags": [
+        "下游检测",
+        "对照图"
+      ],
+      "extra": {
+        "raw_image_url": "/runtime/enhance_jobs/enhance_646c994263/result/improved_mpcgan/assets/input/003203.jpg",
+        "enhanced_image_url": "/runtime/enhance_jobs/enhance_646c994263/result/improved_mpcgan/assets/output/003203_fake.png",
+        "raw_json_url": "/runtime/detect_compare_jobs/detect_compare_2b5cff2134/raw_detections.json",
+        "enhanced_json_url": "/runtime/detect_compare_jobs/detect_compare_2b5cff2134/enhanced_detections.json"
+      }
+    },
+    {
+      "id": "enhance_646c994263",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-15 15:42:03",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 0.3357，UIQM 提升 -2.0948",
+      "input_url": "/runtime/enhance_jobs/enhance_646c994263/result/improved_mpcgan/assets/input/003203.jpg",
+      "cover_url": "/runtime/enhance_jobs/enhance_646c994263/result/improved_mpcgan/assets/output/003203_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_646c994263/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_646c994263/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "detect_compare_989870dcea",
+      "type": "detect_compare",
+      "title": "下游检测对照案例",
+      "created_at": "2026-04-15 15:41:26",
+      "model_label": "下游检测器 (YOLO)",
+      "summary": "原图 2 vs 增强 0（Δ -2）。",
+      "input_url": "/runtime/enhance_jobs/enhance_ee0f7a23ba/result/improved_mpcgan/assets/input/435_img.png",
+      "cover_url": "/runtime/detect_compare_jobs/detect_compare_989870dcea/detect_vs.jpg",
+      "report_url": "/runtime/detect_compare_jobs/detect_compare_989870dcea/index.html",
+      "metrics_url": "/runtime/detect_compare_jobs/detect_compare_989870dcea/enhanced_detections.json",
+      "tags": [
+        "下游检测",
+        "对照图"
+      ],
+      "extra": {
+        "raw_image_url": "/runtime/enhance_jobs/enhance_ee0f7a23ba/result/improved_mpcgan/assets/input/435_img.png",
+        "enhanced_image_url": "/runtime/enhance_jobs/enhance_ee0f7a23ba/result/improved_mpcgan/assets/output/435_img_fake.png",
+        "raw_json_url": "/runtime/detect_compare_jobs/detect_compare_989870dcea/raw_detections.json",
+        "enhanced_json_url": "/runtime/detect_compare_jobs/detect_compare_989870dcea/enhanced_detections.json"
+      }
+    },
+    {
+      "id": "enhance_ee0f7a23ba",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-15 15:41:13",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 2.64，UIQM 提升 -4.6779",
+      "input_url": "/runtime/enhance_jobs/enhance_ee0f7a23ba/result/improved_mpcgan/assets/input/435_img.png",
+      "cover_url": "/runtime/enhance_jobs/enhance_ee0f7a23ba/result/improved_mpcgan/assets/output/435_img_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_ee0f7a23ba/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_ee0f7a23ba/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "compare_25c34959c8",
+      "type": "compare",
+      "title": "传统方法与改进模型综合对比案例",
+      "created_at": "2026-04-13 11:12:48",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "改进模型 MPCGAN 与传统方法、原始 CycleGAN 的同图横向对比。",
+      "input_url": "/runtime/compare_jobs/compare_25c34959c8/input/gmn_5218up.jpg",
+      "cover_url": "/runtime/compare_jobs/compare_25c34959c8/improved/improved_mpcgan/assets/output/gmn_5218up_fake.png",
+      "report_url": "/runtime/compare_jobs/compare_25c34959c8/compare_report.html",
+      "metrics_url": "/runtime/compare_jobs/compare_25c34959c8/improved/improved_mpcgan/index.html",
+      "tags": [
+        "综合对比",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "detect_compare_d748e749ae",
+      "type": "detect_compare",
+      "title": "下游检测对照案例",
+      "created_at": "2026-04-13 11:11:51",
+      "model_label": "下游检测器 (YOLO)",
+      "summary": "原图 6 vs 增强 2（Δ -4）。",
+      "input_url": "/runtime/enhance_jobs/enhance_853aa0e626/result/improved_mpcgan/assets/input/004575.jpg",
+      "cover_url": "/runtime/detect_compare_jobs/detect_compare_d748e749ae/detect_vs.jpg",
+      "report_url": "/runtime/detect_compare_jobs/detect_compare_d748e749ae/index.html",
+      "metrics_url": "/runtime/detect_compare_jobs/detect_compare_d748e749ae/enhanced_detections.json",
+      "tags": [
+        "下游检测",
+        "对照图"
+      ],
+      "extra": {
+        "raw_image_url": "/runtime/enhance_jobs/enhance_853aa0e626/result/improved_mpcgan/assets/input/004575.jpg",
+        "enhanced_image_url": "/runtime/enhance_jobs/enhance_853aa0e626/result/improved_mpcgan/assets/output/004575_fake.png",
+        "raw_json_url": "/runtime/detect_compare_jobs/detect_compare_d748e749ae/raw_detections.json",
+        "enhanced_json_url": "/runtime/detect_compare_jobs/detect_compare_d748e749ae/enhanced_detections.json"
+      }
+    },
+    {
+      "id": "enhance_853aa0e626",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-13 11:11:35",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 10.5149，UIQM 提升 -2.3346",
+      "input_url": "/runtime/enhance_jobs/enhance_853aa0e626/result/improved_mpcgan/assets/input/004575.jpg",
+      "cover_url": "/runtime/enhance_jobs/enhance_853aa0e626/result/improved_mpcgan/assets/output/004575_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_853aa0e626/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_853aa0e626/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "detect_compare_1baca5fc26",
+      "type": "detect_compare",
+      "title": "下游检测对照案例",
+      "created_at": "2026-04-13 10:46:27",
+      "model_label": "下游检测器 (YOLO)",
+      "summary": "原图 52 vs 增强 10（Δ -42）。",
+      "input_url": "/runtime/enhance_jobs/enhance_4a3f86fce6/result/improved_mpcgan/assets/input/002581.jpg",
+      "cover_url": "/runtime/detect_compare_jobs/detect_compare_1baca5fc26/detect_vs.jpg",
+      "report_url": "/runtime/detect_compare_jobs/detect_compare_1baca5fc26/index.html",
+      "metrics_url": "/runtime/detect_compare_jobs/detect_compare_1baca5fc26/enhanced_detections.json",
+      "tags": [
+        "下游检测",
+        "对照图"
+      ],
+      "extra": {
+        "raw_image_url": "/runtime/enhance_jobs/enhance_4a3f86fce6/result/improved_mpcgan/assets/input/002581.jpg",
+        "enhanced_image_url": "/runtime/enhance_jobs/enhance_4a3f86fce6/result/improved_mpcgan/assets/output/002581_fake.png",
+        "raw_json_url": "/runtime/detect_compare_jobs/detect_compare_1baca5fc26/raw_detections.json",
+        "enhanced_json_url": "/runtime/detect_compare_jobs/detect_compare_1baca5fc26/enhanced_detections.json"
+      }
+    },
+    {
+      "id": "enhance_4a3f86fce6",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-13 10:46:27",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 -1.749，UIQM 提升 -1.6822",
+      "input_url": "/runtime/enhance_jobs/enhance_4a3f86fce6/result/improved_mpcgan/assets/input/002581.jpg",
+      "cover_url": "/runtime/enhance_jobs/enhance_4a3f86fce6/result/improved_mpcgan/assets/output/002581_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_4a3f86fce6/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_4a3f86fce6/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "detect_compare_6ebab702b7",
+      "type": "detect_compare",
+      "title": "下游检测对照案例",
+      "created_at": "2026-04-13 10:42:39",
+      "model_label": "下游检测器 (YOLO)",
+      "summary": "原图 1 vs 增强 0（Δ -1）。",
+      "input_url": "/runtime/enhance_jobs/enhance_8c3addc7fe/result/improved_mpcgan/assets/input/004650.jpg",
+      "cover_url": "/runtime/detect_compare_jobs/detect_compare_6ebab702b7/detect_vs.jpg",
+      "report_url": "/runtime/detect_compare_jobs/detect_compare_6ebab702b7/index.html",
+      "metrics_url": "/runtime/detect_compare_jobs/detect_compare_6ebab702b7/enhanced_detections.json",
+      "tags": [
+        "下游检测",
+        "对照图"
+      ],
+      "extra": {
+        "raw_image_url": "/runtime/enhance_jobs/enhance_8c3addc7fe/result/improved_mpcgan/assets/input/004650.jpg",
+        "enhanced_image_url": "/runtime/enhance_jobs/enhance_8c3addc7fe/result/improved_mpcgan/assets/output/004650_fake.png",
+        "raw_json_url": "/runtime/detect_compare_jobs/detect_compare_6ebab702b7/raw_detections.json",
+        "enhanced_json_url": "/runtime/detect_compare_jobs/detect_compare_6ebab702b7/enhanced_detections.json"
+      }
+    },
+    {
+      "id": "enhance_8c3addc7fe",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-13 10:42:28",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 1.0197，UIQM 提升 -5.2289",
+      "input_url": "/runtime/enhance_jobs/enhance_8c3addc7fe/result/improved_mpcgan/assets/input/004650.jpg",
+      "cover_url": "/runtime/enhance_jobs/enhance_8c3addc7fe/result/improved_mpcgan/assets/output/004650_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_8c3addc7fe/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_8c3addc7fe/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "detect_compare_e124bdae09",
+      "type": "detect_compare",
+      "title": "下游检测对照案例",
+      "created_at": "2026-04-11 19:20:14",
+      "model_label": "下游检测器 (YOLO)",
+      "summary": "原图 59 vs 增强 39（Δ -20）。",
+      "input_url": "/runtime/enhance_jobs/enhance_41570f33ca/result/improved_mpcgan/assets/input/000115.jpg",
+      "cover_url": "/runtime/detect_compare_jobs/detect_compare_e124bdae09/detect_vs.jpg",
+      "report_url": "/runtime/detect_compare_jobs/detect_compare_e124bdae09/index.html",
+      "metrics_url": "/runtime/detect_compare_jobs/detect_compare_e124bdae09/enhanced_detections.json",
+      "tags": [
+        "下游检测",
+        "对照图"
+      ],
+      "extra": {
+        "raw_image_url": "/runtime/enhance_jobs/enhance_41570f33ca/result/improved_mpcgan/assets/input/000115.jpg",
+        "enhanced_image_url": "/runtime/enhance_jobs/enhance_41570f33ca/result/improved_mpcgan/assets/output/000115_fake.png",
+        "raw_json_url": "/runtime/detect_compare_jobs/detect_compare_e124bdae09/raw_detections.json",
+        "enhanced_json_url": "/runtime/detect_compare_jobs/detect_compare_e124bdae09/enhanced_detections.json"
+      }
+    },
+    {
+      "id": "enhance_41570f33ca",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-11 19:20:13",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 -4.6966，UIQM 提升 -1.9725",
+      "input_url": "/runtime/enhance_jobs/enhance_41570f33ca/result/improved_mpcgan/assets/input/000115.jpg",
+      "cover_url": "/runtime/enhance_jobs/enhance_41570f33ca/result/improved_mpcgan/assets/output/000115_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_41570f33ca/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_41570f33ca/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "detect_compare_87467889c0",
+      "type": "detect_compare",
+      "title": "下游检测对照案例",
+      "created_at": "2026-04-11 19:19:02",
+      "model_label": "下游检测器 (YOLO)",
+      "summary": "原图 11 vs 增强 7（Δ -4）。",
+      "input_url": "/runtime/enhance_jobs/enhance_ab1e983c4d/result/improved_mpcgan/assets/input/004203.jpg",
+      "cover_url": "/runtime/detect_compare_jobs/detect_compare_87467889c0/detect_vs.jpg",
+      "report_url": "/runtime/detect_compare_jobs/detect_compare_87467889c0/index.html",
+      "metrics_url": "/runtime/detect_compare_jobs/detect_compare_87467889c0/enhanced_detections.json",
+      "tags": [
+        "下游检测",
+        "对照图"
+      ],
+      "extra": {
+        "raw_image_url": "/runtime/enhance_jobs/enhance_ab1e983c4d/result/improved_mpcgan/assets/input/004203.jpg",
+        "enhanced_image_url": "/runtime/enhance_jobs/enhance_ab1e983c4d/result/improved_mpcgan/assets/output/004203_fake.png",
+        "raw_json_url": "/runtime/detect_compare_jobs/detect_compare_87467889c0/raw_detections.json",
+        "enhanced_json_url": "/runtime/detect_compare_jobs/detect_compare_87467889c0/enhanced_detections.json"
+      }
+    },
+    {
+      "id": "detect_compare_e0c201648b",
+      "type": "detect_compare",
+      "title": "下游检测对照案例",
+      "created_at": "2026-04-11 19:18:45",
+      "model_label": "下游检测器 (YOLO)",
+      "summary": "原图 11 vs 增强 7（Δ -4）。",
+      "input_url": "/runtime/enhance_jobs/enhance_ab1e983c4d/result/improved_mpcgan/assets/input/004203.jpg",
+      "cover_url": "/runtime/detect_compare_jobs/detect_compare_e0c201648b/detect_vs.jpg",
+      "report_url": "/runtime/detect_compare_jobs/detect_compare_e0c201648b/index.html",
+      "metrics_url": "/runtime/detect_compare_jobs/detect_compare_e0c201648b/enhanced_detections.json",
+      "tags": [
+        "下游检测",
+        "对照图"
+      ],
+      "extra": {
+        "raw_image_url": "/runtime/enhance_jobs/enhance_ab1e983c4d/result/improved_mpcgan/assets/input/004203.jpg",
+        "enhanced_image_url": "/runtime/enhance_jobs/enhance_ab1e983c4d/result/improved_mpcgan/assets/output/004203_fake.png",
+        "raw_json_url": "/runtime/detect_compare_jobs/detect_compare_e0c201648b/raw_detections.json",
+        "enhanced_json_url": "/runtime/detect_compare_jobs/detect_compare_e0c201648b/enhanced_detections.json"
+      }
+    },
+    {
+      "id": "enhance_ab1e983c4d",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-11 19:18:45",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 3.5664，UIQM 提升 -2.3549",
+      "input_url": "/runtime/enhance_jobs/enhance_ab1e983c4d/result/improved_mpcgan/assets/input/004203.jpg",
+      "cover_url": "/runtime/enhance_jobs/enhance_ab1e983c4d/result/improved_mpcgan/assets/output/004203_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_ab1e983c4d/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_ab1e983c4d/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "detect_compare_b714c3b439",
+      "type": "detect_compare",
+      "title": "下游检测对照案例",
+      "created_at": "2026-04-11 19:17:44",
+      "model_label": "下游检测器 (YOLO)",
+      "summary": "原图 2 vs 增强 1（Δ -1）。",
+      "input_url": "/runtime/enhance_jobs/enhance_92a2ed1687/result/improved_mpcgan/assets/input/003203.jpg",
+      "cover_url": "/runtime/detect_compare_jobs/detect_compare_b714c3b439/detect_vs.jpg",
+      "report_url": "/runtime/detect_compare_jobs/detect_compare_b714c3b439/index.html",
+      "metrics_url": "/runtime/detect_compare_jobs/detect_compare_b714c3b439/enhanced_detections.json",
+      "tags": [
+        "下游检测",
+        "对照图"
+      ],
+      "extra": {
+        "raw_image_url": "/runtime/enhance_jobs/enhance_92a2ed1687/result/improved_mpcgan/assets/input/003203.jpg",
+        "enhanced_image_url": "/runtime/enhance_jobs/enhance_92a2ed1687/result/improved_mpcgan/assets/output/003203_fake.png",
+        "raw_json_url": "/runtime/detect_compare_jobs/detect_compare_b714c3b439/raw_detections.json",
+        "enhanced_json_url": "/runtime/detect_compare_jobs/detect_compare_b714c3b439/enhanced_detections.json"
+      }
+    },
+    {
+      "id": "enhance_92a2ed1687",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-11 19:17:41",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 0.3357，UIQM 提升 -2.0948",
+      "input_url": "/runtime/enhance_jobs/enhance_92a2ed1687/result/improved_mpcgan/assets/input/003203.jpg",
+      "cover_url": "/runtime/enhance_jobs/enhance_92a2ed1687/result/improved_mpcgan/assets/output/003203_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_92a2ed1687/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_92a2ed1687/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "detect_compare_d4b33218fd",
+      "type": "detect_compare",
+      "title": "下游检测对照案例",
+      "created_at": "2026-04-11 19:13:35",
+      "model_label": "下游检测器 (YOLO)",
+      "summary": "原图 52 vs 增强 10（Δ -42）。",
+      "input_url": "/runtime/enhance_jobs/enhance_efeda2476c/result/improved_mpcgan/assets/input/002581.jpg",
+      "cover_url": "/runtime/detect_compare_jobs/detect_compare_d4b33218fd/detect_vs.jpg",
+      "report_url": "/runtime/detect_compare_jobs/detect_compare_d4b33218fd/index.html",
+      "metrics_url": "/runtime/detect_compare_jobs/detect_compare_d4b33218fd/enhanced_detections.json",
+      "tags": [
+        "下游检测",
+        "对照图"
+      ],
+      "extra": {
+        "raw_image_url": "/runtime/enhance_jobs/enhance_efeda2476c/result/improved_mpcgan/assets/input/002581.jpg",
+        "enhanced_image_url": "/runtime/enhance_jobs/enhance_efeda2476c/result/improved_mpcgan/assets/output/002581_fake.png",
+        "raw_json_url": "/runtime/detect_compare_jobs/detect_compare_d4b33218fd/raw_detections.json",
+        "enhanced_json_url": "/runtime/detect_compare_jobs/detect_compare_d4b33218fd/enhanced_detections.json"
+      }
+    },
+    {
+      "id": "enhance_efeda2476c",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-11 15:50:10",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 -1.749，UIQM 提升 -1.6822",
+      "input_url": "/runtime/enhance_jobs/enhance_efeda2476c/result/improved_mpcgan/assets/input/002581.jpg",
+      "cover_url": "/runtime/enhance_jobs/enhance_efeda2476c/result/improved_mpcgan/assets/output/002581_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_efeda2476c/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_efeda2476c/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "detect_compare_c5a92a446a",
+      "type": "detect_compare",
+      "title": "下游检测对照案例",
+      "created_at": "2026-04-11 15:46:15",
+      "model_label": "下游检测器 (YOLO)",
+      "summary": "原图 0 vs 增强 0（Δ +0）。",
+      "input_url": "/runtime/enhance_jobs/enhance_59920ea19f/result/improved_mpcgan/assets/input/0_input.png",
+      "cover_url": "/runtime/detect_compare_jobs/detect_compare_c5a92a446a/detect_vs.jpg",
+      "report_url": "/runtime/detect_compare_jobs/detect_compare_c5a92a446a/index.html",
+      "metrics_url": "/runtime/detect_compare_jobs/detect_compare_c5a92a446a/enhanced_detections.json",
+      "tags": [
+        "下游检测",
+        "对照图"
+      ],
+      "extra": {
+        "raw_image_url": "/runtime/enhance_jobs/enhance_59920ea19f/result/improved_mpcgan/assets/input/0_input.png",
+        "enhanced_image_url": "/runtime/enhance_jobs/enhance_59920ea19f/result/improved_mpcgan/assets/output/0_input_fake.png",
+        "raw_json_url": "/runtime/detect_compare_jobs/detect_compare_c5a92a446a/raw_detections.json",
+        "enhanced_json_url": "/runtime/detect_compare_jobs/detect_compare_c5a92a446a/enhanced_detections.json"
+      }
+    },
+    {
+      "id": "enhance_cff2622eb9",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-11 15:40:54",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 2.4875，UIQM 提升 -0.4934",
+      "input_url": "/runtime/enhance_jobs/enhance_cff2622eb9/result/improved_mpcgan/assets/input/0_input.png",
+      "cover_url": "/runtime/enhance_jobs/enhance_cff2622eb9/result/improved_mpcgan/assets/output/0_input_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_cff2622eb9/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_cff2622eb9/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "enhance_fa818b2f18",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-11 15:32:31",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 -7.0981，UIQM 提升 -5.3204",
+      "input_url": "/runtime/enhance_jobs/enhance_fa818b2f18/result/improved_mpcgan/assets/input/000921.jpg",
+      "cover_url": "/runtime/enhance_jobs/enhance_fa818b2f18/result/improved_mpcgan/assets/output/000921_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_fa818b2f18/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_fa818b2f18/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "enhance_ea338d6f18",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-11 15:31:15",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 -4.6966，UIQM 提升 -1.9725",
+      "input_url": "/runtime/enhance_jobs/enhance_ea338d6f18/result/improved_mpcgan/assets/input/000115.jpg",
+      "cover_url": "/runtime/enhance_jobs/enhance_ea338d6f18/result/improved_mpcgan/assets/output/000115_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_ea338d6f18/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_ea338d6f18/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "enhance_0112bb30e3",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-11 15:21:12",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 -0.0206，UIQM 提升 -3.1449",
+      "input_url": "/runtime/enhance_jobs/enhance_0112bb30e3/result/improved_mpcgan/assets/input/627.png",
+      "cover_url": "/runtime/enhance_jobs/enhance_0112bb30e3/result/improved_mpcgan/assets/output/627_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_0112bb30e3/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_0112bb30e3/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "enhance_6ebabd91ec",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-11 15:19:29",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 -0.5807，UIQM 提升 -1.9347",
+      "input_url": "/runtime/enhance_jobs/enhance_6ebabd91ec/result/improved_mpcgan/assets/input/test_9001up.jpg",
+      "cover_url": "/runtime/enhance_jobs/enhance_6ebabd91ec/result/improved_mpcgan/assets/output/test_9001up_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_6ebabd91ec/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_6ebabd91ec/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "enhance_77acb6473e",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-11 15:12:03",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 2.4875，UIQM 提升 -0.4934",
+      "input_url": "/runtime/enhance_jobs/enhance_77acb6473e/result/improved_mpcgan/assets/input/0_input.png",
+      "cover_url": "/runtime/enhance_jobs/enhance_77acb6473e/result/improved_mpcgan/assets/output/0_input_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_77acb6473e/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_77acb6473e/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "enhance_59920ea19f",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-11 15:11:23",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 2.4875，UIQM 提升 -0.4934",
+      "input_url": "/runtime/enhance_jobs/enhance_59920ea19f/result/improved_mpcgan/assets/input/0_input.png",
+      "cover_url": "/runtime/enhance_jobs/enhance_59920ea19f/result/improved_mpcgan/assets/output/0_input_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_59920ea19f/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_59920ea19f/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "enhance_75a48b28d8",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-11 15:09:55",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 2.4875，UIQM 提升 -0.4934",
+      "input_url": "/runtime/enhance_jobs/enhance_75a48b28d8/result/improved_mpcgan/assets/input/0_input.png",
+      "cover_url": "/runtime/enhance_jobs/enhance_75a48b28d8/result/improved_mpcgan/assets/output/0_input_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_75a48b28d8/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_75a48b28d8/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "enhance_d32bd40d4f",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-03 19:37:38",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 -1.4357，UIQM 提升 0.3499",
+      "input_url": "/runtime/enhance_jobs/enhance_d32bd40d4f/result/improved_mpcgan/assets/input/n01496331_6940.png",
+      "cover_url": "/runtime/enhance_jobs/enhance_d32bd40d4f/result/improved_mpcgan/assets/output/n01496331_6940_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_d32bd40d4f/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_d32bd40d4f/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "enhance_841fc16d41",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-03 19:27:37",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 -3.6313，UIQM 提升 -0.0343",
+      "input_url": "/runtime/enhance_jobs/enhance_841fc16d41/result/improved_mpcgan/assets/input/n01496331_5858.png",
+      "cover_url": "/runtime/enhance_jobs/enhance_841fc16d41/result/improved_mpcgan/assets/output/n01496331_5858_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_841fc16d41/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_841fc16d41/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "enhance_1828cf5836",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-03 19:27:20",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 1.9263，UIQM 提升 0.3342",
+      "input_url": "/runtime/enhance_jobs/enhance_1828cf5836/result/improved_mpcgan/assets/input/n01496331_3833.png",
+      "cover_url": "/runtime/enhance_jobs/enhance_1828cf5836/result/improved_mpcgan/assets/output/n01496331_3833_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_1828cf5836/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_1828cf5836/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "enhance_8f8935fdc8",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-03 19:27:01",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 0.7327，UIQM 提升 0.5193",
+      "input_url": "/runtime/enhance_jobs/enhance_8f8935fdc8/result/improved_mpcgan/assets/input/n01496331_3016.png",
+      "cover_url": "/runtime/enhance_jobs/enhance_8f8935fdc8/result/improved_mpcgan/assets/output/n01496331_3016_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_8f8935fdc8/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_8f8935fdc8/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "enhance_9b5a5427b9",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-03 19:26:34",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 0.5817，UIQM 提升 -2.4784",
+      "input_url": "/runtime/enhance_jobs/enhance_9b5a5427b9/result/improved_mpcgan/assets/input/13259.png",
+      "cover_url": "/runtime/enhance_jobs/enhance_9b5a5427b9/result/improved_mpcgan/assets/output/13259_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_9b5a5427b9/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_9b5a5427b9/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "enhance_966eec7470",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-03 19:25:51",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 1.2828，UIQM 提升 -5.5039",
+      "input_url": "/runtime/enhance_jobs/enhance_966eec7470/result/improved_mpcgan/assets/input/9618.png",
+      "cover_url": "/runtime/enhance_jobs/enhance_966eec7470/result/improved_mpcgan/assets/output/9618_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_966eec7470/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_966eec7470/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "enhance_0216f0320d",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-03 19:25:34",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 -0.0206，UIQM 提升 -3.1449",
+      "input_url": "/runtime/enhance_jobs/enhance_0216f0320d/result/improved_mpcgan/assets/input/627.png",
+      "cover_url": "/runtime/enhance_jobs/enhance_0216f0320d/result/improved_mpcgan/assets/output/627_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_0216f0320d/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_0216f0320d/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "enhance_b5cc7cb02e",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-03 19:25:11",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 2.2484，UIQM 提升 -7.3337",
+      "input_url": "/runtime/enhance_jobs/enhance_b5cc7cb02e/result/improved_mpcgan/assets/input/6340.png",
+      "cover_url": "/runtime/enhance_jobs/enhance_b5cc7cb02e/result/improved_mpcgan/assets/output/6340_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_b5cc7cb02e/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_b5cc7cb02e/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "enhance_9ede5fe210",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-03 19:22:03",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 5.3384，UIQM 提升 -4.7048",
+      "input_url": "/runtime/enhance_jobs/enhance_9ede5fe210/result/improved_mpcgan/assets/input/nm_0up.jpg",
+      "cover_url": "/runtime/enhance_jobs/enhance_9ede5fe210/result/improved_mpcgan/assets/output/nm_0up_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_9ede5fe210/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_9ede5fe210/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "enhance_c6de23038e",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-03 19:21:51",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 5.3384，UIQM 提升 -4.7048",
+      "input_url": "/runtime/enhance_jobs/enhance_c6de23038e/result/improved_mpcgan/assets/input/nm_0up.jpg",
+      "cover_url": "/runtime/enhance_jobs/enhance_c6de23038e/result/improved_mpcgan/assets/output/nm_0up_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_c6de23038e/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_c6de23038e/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "enhance_de085ec20d",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-03 19:21:29",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 5.3384，UIQM 提升 -4.7048",
+      "input_url": "/runtime/enhance_jobs/enhance_de085ec20d/result/improved_mpcgan/assets/input/nm_0up.jpg",
+      "cover_url": "/runtime/enhance_jobs/enhance_de085ec20d/result/improved_mpcgan/assets/output/nm_0up_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_de085ec20d/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_de085ec20d/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    }
+  ],
+  "runtime_mode": "static"
+}

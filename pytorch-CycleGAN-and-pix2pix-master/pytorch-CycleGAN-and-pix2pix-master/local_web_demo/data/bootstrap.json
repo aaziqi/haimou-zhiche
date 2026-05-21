@@ -1,0 +1,429 @@
+{
+  "ok": true,
+  "models": [
+    {
+      "key": "classic_cyclegan",
+      "label": "原 CycleGAN",
+      "description": "无配对图像翻译基线模型，作为原始 GAN 版本对照。",
+      "checkpoint_name": "euvp_cyclegan_full",
+      "epoch": "200",
+      "direction": "AtoB",
+      "badge": "基线模型",
+      "benchmarks": {
+        "euvp": {
+          "psnr": 22.8155,
+          "ssim": 0.7833,
+          "uciqe_pred": 25.9335,
+          "uiqm_pred": 5.3362
+        },
+        "uieb": {
+          "psnr": 17.8397,
+          "ssim": 0.6261,
+          "uciqe_pred": 23.2519,
+          "uiqm_pred": 10.4775
+        }
+      }
+    },
+    {
+      "key": "improved_mpcgan",
+      "label": "改进模型 MPCGAN",
+      "description": "当前适合作为主推方案的增强模型，兼顾视觉效果与客观指标。",
+      "checkpoint_name": "euvp_mpcgan_stage2_s0",
+      "epoch": "202",
+      "direction": "AtoB",
+      "badge": "主推模型",
+      "benchmarks": {
+        "euvp": {
+          "psnr": 22.9074,
+          "ssim": 0.7946,
+          "uciqe_pred": 25.8164,
+          "uiqm_pred": 5.4069
+        },
+        "uieb": {
+          "psnr": 17.5409,
+          "ssim": 0.6242,
+          "uciqe_pred": 22.4599,
+          "uiqm_pred": 10.5018
+        }
+      }
+    },
+    {
+      "key": "ablation_d",
+      "label": "结构约束消融增强基线",
+      "description": "用于展示结构损失与改进策略有效性的消融版本。",
+      "checkpoint_name": "abl_uieb_D",
+      "epoch": "20",
+      "direction": "AtoB",
+      "badge": "消融对照",
+      "benchmarks": {
+        "euvp": {
+          "psnr": 17.8048,
+          "ssim": 0.6524,
+          "uciqe_pred": 28.5049,
+          "uiqm_pred": 4.5583
+        },
+        "uieb": {
+          "psnr": 18.2965,
+          "ssim": 0.584,
+          "uciqe_pred": 28.4395,
+          "uiqm_pred": 9.3363
+        }
+      }
+    }
+  ],
+  "traditional_methods": [
+    {
+      "key": "grayworld",
+      "label": "Gray World 白平衡",
+      "description": "传统颜色校正方法，适合快速缓解偏色问题。"
+    },
+    {
+      "key": "clahe",
+      "label": "CLAHE 对比度增强",
+      "description": "传统局部对比度增强方法，能提升细节层次。"
+    },
+    {
+      "key": "grayworld_clahe",
+      "label": "Gray World + CLAHE",
+      "description": "先进行白平衡，再执行局部对比度增强的组合方案。"
+    },
+    {
+      "key": "gamma",
+      "label": "Gamma 校正",
+      "description": "传统非线性亮度映射方法，适合快速提亮低照度画面。"
+    }
+  ],
+  "benchmarks": [
+    {
+      "dataset": "euvp",
+      "title": "EUVP 数据集表现",
+      "rows": [
+        {
+          "label": "传统方法",
+          "model": "baseline:grayworld_clahe",
+          "epoch": "",
+          "psnr": 16.5866,
+          "ssim": 0.7023,
+          "uciqe_pred": 27.2447,
+          "uiqm_pred": 6.0583
+        },
+        {
+          "label": "原 CycleGAN",
+          "model": "euvp_cyclegan_full",
+          "epoch": "200",
+          "psnr": 22.8155,
+          "ssim": 0.7833,
+          "uciqe_pred": 25.9335,
+          "uiqm_pred": 5.3362
+        },
+        {
+          "label": "改进模型",
+          "model": "euvp_mpcgan_stage2_s0",
+          "epoch": "202",
+          "psnr": 22.9074,
+          "ssim": 0.7946,
+          "uciqe_pred": 25.8164,
+          "uiqm_pred": 5.4069
+        }
+      ]
+    },
+    {
+      "dataset": "uieb",
+      "title": "UIEB 泛化表现",
+      "rows": [
+        {
+          "label": "传统方法",
+          "model": "baseline:grayworld_clahe",
+          "epoch": "",
+          "psnr": 17.6379,
+          "ssim": 0.8197,
+          "uciqe_pred": 25.0226,
+          "uiqm_pred": 6.7676
+        },
+        {
+          "label": "原 CycleGAN",
+          "model": "euvp_cyclegan_full",
+          "epoch": "200",
+          "psnr": 17.8397,
+          "ssim": 0.6261,
+          "uciqe_pred": 23.2519,
+          "uiqm_pred": 10.4775
+        },
+        {
+          "label": "改进模型",
+          "model": "euvp_mpcgan_stage2_s0",
+          "epoch": "202",
+          "psnr": 17.5409,
+          "ssim": 0.6242,
+          "uciqe_pred": 22.4599,
+          "uiqm_pred": 10.5018
+        }
+      ]
+    }
+  ],
+  "presentation_pack": {
+    "project_name": "海眸智澈：面向水下机器人视觉任务的智能图像增强平台",
+    "project_subtitle": "基于改进 CycleGAN 的水下图像增强与可视化评测系统",
+    "track": "软件应用与开发",
+    "slogan": "让浑浊水下影像变得更清晰、更自然、更可用。",
+    "highlights": [
+      "围绕水下偏色、低对比和细节模糊等问题，构建面向真实场景的图像增强方案。",
+      "将无配对图像翻译模型升级为可展示、可评测、可批量运行的本地演示系统。",
+      "同步输出 UCIQE、UIQM、PSNR、SSIM 等指标，兼顾视觉观感与工程可验证性。",
+      "面向海洋监测、ROV/AUV、水下巡检与生态调查等应用场景进行展示包装。"
+    ],
+    "innovations": [
+      "从纯算法项目升级为完整软件作品，实现模型、推理、对比、评测和展示一体化。",
+      "将传统方法、原始 CycleGAN 与改进模型置于统一交互界面下进行横向验证。",
+      "引入本地交互式演示界面，支持上传图片、切换模型、拖拽对比和报告导出。",
+      "保留实验数据与指标榜单，形成适合软件应用展示的可信叙事链条。"
+    ],
+    "ppt_outline": [
+      "项目背景：水下图像退化现象与应用痛点",
+      "方案设计：传统方法、CycleGAN 基线与改进模型整体结构",
+      "系统演示：上传图片、切换模型、前后对比、报告页与图表页",
+      "实验结果：EUVP、UIEB 数据集上的客观指标与主观视觉表现",
+      "应用价值：海洋监测、水下机器人、海洋牧场与应急搜救",
+      "总结展望：视频增强、实时部署与更多下游视觉任务联动"
+    ],
+    "demo_script": [
+      "第一步，展示原始水下图像，说明偏色、雾化和细节损失等典型问题。",
+      "第二步，切换原始 CycleGAN 与改进模型，突出结构清晰度与色彩自然度差异。",
+      "第三步，打开对比页说明传统方法虽然能提亮，但在细节保持和整体观感上存在局限。",
+      "第四步，展示指标榜单与样例报告，说明作品不仅能看，还能量化验证。",
+      "第五步，落脚到海洋机器人、水下巡检与生态监测等实际场景价值。"
+    ]
+  },
+  "archives": [
+    {
+      "id": "detect_compare_2b5cff2134",
+      "type": "detect_compare",
+      "title": "下游检测对照案例",
+      "created_at": "2026-04-15 15:42:05",
+      "model_label": "下游检测器 (YOLO)",
+      "summary": "原图 2 vs 增强 1（Δ -1）。",
+      "input_url": "/runtime/enhance_jobs/enhance_646c994263/result/improved_mpcgan/assets/input/003203.jpg",
+      "cover_url": "/runtime/detect_compare_jobs/detect_compare_2b5cff2134/detect_vs.jpg",
+      "report_url": "/runtime/detect_compare_jobs/detect_compare_2b5cff2134/index.html",
+      "metrics_url": "/runtime/detect_compare_jobs/detect_compare_2b5cff2134/enhanced_detections.json",
+      "tags": [
+        "下游检测",
+        "对照图"
+      ],
+      "extra": {
+        "raw_image_url": "/runtime/enhance_jobs/enhance_646c994263/result/improved_mpcgan/assets/input/003203.jpg",
+        "enhanced_image_url": "/runtime/enhance_jobs/enhance_646c994263/result/improved_mpcgan/assets/output/003203_fake.png",
+        "raw_json_url": "/runtime/detect_compare_jobs/detect_compare_2b5cff2134/raw_detections.json",
+        "enhanced_json_url": "/runtime/detect_compare_jobs/detect_compare_2b5cff2134/enhanced_detections.json"
+      }
+    },
+    {
+      "id": "enhance_646c994263",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-15 15:42:03",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 0.3357，UIQM 提升 -2.0948",
+      "input_url": "/runtime/enhance_jobs/enhance_646c994263/result/improved_mpcgan/assets/input/003203.jpg",
+      "cover_url": "/runtime/enhance_jobs/enhance_646c994263/result/improved_mpcgan/assets/output/003203_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_646c994263/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_646c994263/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "detect_compare_989870dcea",
+      "type": "detect_compare",
+      "title": "下游检测对照案例",
+      "created_at": "2026-04-15 15:41:26",
+      "model_label": "下游检测器 (YOLO)",
+      "summary": "原图 2 vs 增强 0（Δ -2）。",
+      "input_url": "/runtime/enhance_jobs/enhance_ee0f7a23ba/result/improved_mpcgan/assets/input/435_img.png",
+      "cover_url": "/runtime/detect_compare_jobs/detect_compare_989870dcea/detect_vs.jpg",
+      "report_url": "/runtime/detect_compare_jobs/detect_compare_989870dcea/index.html",
+      "metrics_url": "/runtime/detect_compare_jobs/detect_compare_989870dcea/enhanced_detections.json",
+      "tags": [
+        "下游检测",
+        "对照图"
+      ],
+      "extra": {
+        "raw_image_url": "/runtime/enhance_jobs/enhance_ee0f7a23ba/result/improved_mpcgan/assets/input/435_img.png",
+        "enhanced_image_url": "/runtime/enhance_jobs/enhance_ee0f7a23ba/result/improved_mpcgan/assets/output/435_img_fake.png",
+        "raw_json_url": "/runtime/detect_compare_jobs/detect_compare_989870dcea/raw_detections.json",
+        "enhanced_json_url": "/runtime/detect_compare_jobs/detect_compare_989870dcea/enhanced_detections.json"
+      }
+    },
+    {
+      "id": "enhance_ee0f7a23ba",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-15 15:41:13",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 2.64，UIQM 提升 -4.6779",
+      "input_url": "/runtime/enhance_jobs/enhance_ee0f7a23ba/result/improved_mpcgan/assets/input/435_img.png",
+      "cover_url": "/runtime/enhance_jobs/enhance_ee0f7a23ba/result/improved_mpcgan/assets/output/435_img_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_ee0f7a23ba/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_ee0f7a23ba/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "compare_25c34959c8",
+      "type": "compare",
+      "title": "传统方法与改进模型综合对比案例",
+      "created_at": "2026-04-13 11:12:48",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "改进模型 MPCGAN 与传统方法、原始 CycleGAN 的同图横向对比。",
+      "input_url": "/runtime/compare_jobs/compare_25c34959c8/input/gmn_5218up.jpg",
+      "cover_url": "/runtime/compare_jobs/compare_25c34959c8/improved/improved_mpcgan/assets/output/gmn_5218up_fake.png",
+      "report_url": "/runtime/compare_jobs/compare_25c34959c8/compare_report.html",
+      "metrics_url": "/runtime/compare_jobs/compare_25c34959c8/improved/improved_mpcgan/index.html",
+      "tags": [
+        "综合对比",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "detect_compare_d748e749ae",
+      "type": "detect_compare",
+      "title": "下游检测对照案例",
+      "created_at": "2026-04-13 11:11:51",
+      "model_label": "下游检测器 (YOLO)",
+      "summary": "原图 6 vs 增强 2（Δ -4）。",
+      "input_url": "/runtime/enhance_jobs/enhance_853aa0e626/result/improved_mpcgan/assets/input/004575.jpg",
+      "cover_url": "/runtime/detect_compare_jobs/detect_compare_d748e749ae/detect_vs.jpg",
+      "report_url": "/runtime/detect_compare_jobs/detect_compare_d748e749ae/index.html",
+      "metrics_url": "/runtime/detect_compare_jobs/detect_compare_d748e749ae/enhanced_detections.json",
+      "tags": [
+        "下游检测",
+        "对照图"
+      ],
+      "extra": {
+        "raw_image_url": "/runtime/enhance_jobs/enhance_853aa0e626/result/improved_mpcgan/assets/input/004575.jpg",
+        "enhanced_image_url": "/runtime/enhance_jobs/enhance_853aa0e626/result/improved_mpcgan/assets/output/004575_fake.png",
+        "raw_json_url": "/runtime/detect_compare_jobs/detect_compare_d748e749ae/raw_detections.json",
+        "enhanced_json_url": "/runtime/detect_compare_jobs/detect_compare_d748e749ae/enhanced_detections.json"
+      }
+    },
+    {
+      "id": "enhance_853aa0e626",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-13 11:11:35",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 10.5149，UIQM 提升 -2.3346",
+      "input_url": "/runtime/enhance_jobs/enhance_853aa0e626/result/improved_mpcgan/assets/input/004575.jpg",
+      "cover_url": "/runtime/enhance_jobs/enhance_853aa0e626/result/improved_mpcgan/assets/output/004575_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_853aa0e626/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_853aa0e626/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "detect_compare_1baca5fc26",
+      "type": "detect_compare",
+      "title": "下游检测对照案例",
+      "created_at": "2026-04-13 10:46:27",
+      "model_label": "下游检测器 (YOLO)",
+      "summary": "原图 52 vs 增强 10（Δ -42）。",
+      "input_url": "/runtime/enhance_jobs/enhance_4a3f86fce6/result/improved_mpcgan/assets/input/002581.jpg",
+      "cover_url": "/runtime/detect_compare_jobs/detect_compare_1baca5fc26/detect_vs.jpg",
+      "report_url": "/runtime/detect_compare_jobs/detect_compare_1baca5fc26/index.html",
+      "metrics_url": "/runtime/detect_compare_jobs/detect_compare_1baca5fc26/enhanced_detections.json",
+      "tags": [
+        "下游检测",
+        "对照图"
+      ],
+      "extra": {
+        "raw_image_url": "/runtime/enhance_jobs/enhance_4a3f86fce6/result/improved_mpcgan/assets/input/002581.jpg",
+        "enhanced_image_url": "/runtime/enhance_jobs/enhance_4a3f86fce6/result/improved_mpcgan/assets/output/002581_fake.png",
+        "raw_json_url": "/runtime/detect_compare_jobs/detect_compare_1baca5fc26/raw_detections.json",
+        "enhanced_json_url": "/runtime/detect_compare_jobs/detect_compare_1baca5fc26/enhanced_detections.json"
+      }
+    },
+    {
+      "id": "enhance_4a3f86fce6",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-13 10:46:27",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 -1.749，UIQM 提升 -1.6822",
+      "input_url": "/runtime/enhance_jobs/enhance_4a3f86fce6/result/improved_mpcgan/assets/input/002581.jpg",
+      "cover_url": "/runtime/enhance_jobs/enhance_4a3f86fce6/result/improved_mpcgan/assets/output/002581_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_4a3f86fce6/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_4a3f86fce6/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "detect_compare_6ebab702b7",
+      "type": "detect_compare",
+      "title": "下游检测对照案例",
+      "created_at": "2026-04-13 10:42:39",
+      "model_label": "下游检测器 (YOLO)",
+      "summary": "原图 1 vs 增强 0（Δ -1）。",
+      "input_url": "/runtime/enhance_jobs/enhance_8c3addc7fe/result/improved_mpcgan/assets/input/004650.jpg",
+      "cover_url": "/runtime/detect_compare_jobs/detect_compare_6ebab702b7/detect_vs.jpg",
+      "report_url": "/runtime/detect_compare_jobs/detect_compare_6ebab702b7/index.html",
+      "metrics_url": "/runtime/detect_compare_jobs/detect_compare_6ebab702b7/enhanced_detections.json",
+      "tags": [
+        "下游检测",
+        "对照图"
+      ],
+      "extra": {
+        "raw_image_url": "/runtime/enhance_jobs/enhance_8c3addc7fe/result/improved_mpcgan/assets/input/004650.jpg",
+        "enhanced_image_url": "/runtime/enhance_jobs/enhance_8c3addc7fe/result/improved_mpcgan/assets/output/004650_fake.png",
+        "raw_json_url": "/runtime/detect_compare_jobs/detect_compare_6ebab702b7/raw_detections.json",
+        "enhanced_json_url": "/runtime/detect_compare_jobs/detect_compare_6ebab702b7/enhanced_detections.json"
+      }
+    },
+    {
+      "id": "enhance_8c3addc7fe",
+      "type": "enhance",
+      "title": "改进模型 MPCGAN 单图增强案例",
+      "created_at": "2026-04-13 10:42:28",
+      "model_label": "改进模型 MPCGAN",
+      "summary": "UCIQE 提升 1.0197，UIQM 提升 -5.2289",
+      "input_url": "/runtime/enhance_jobs/enhance_8c3addc7fe/result/improved_mpcgan/assets/input/004650.jpg",
+      "cover_url": "/runtime/enhance_jobs/enhance_8c3addc7fe/result/improved_mpcgan/assets/output/004650_fake.png",
+      "report_url": "/runtime/enhance_jobs/enhance_8c3addc7fe/result/improved_mpcgan/index.html",
+      "metrics_url": "/runtime/enhance_jobs/enhance_8c3addc7fe/result/improved_mpcgan/metrics.csv",
+      "tags": [
+        "单图增强",
+        "主推模型"
+      ]
+    },
+    {
+      "id": "detect_compare_e124bdae09",
+      "type": "detect_compare",
+      "title": "下游检测对照案例",
+      "created_at": "2026-04-11 19:20:14",
+      "model_label": "下游检测器 (YOLO)",
+      "summary": "原图 59 vs 增强 39（Δ -20）。",
+      "input_url": "/runtime/enhance_jobs/enhance_41570f33ca/result/improved_mpcgan/assets/input/000115.jpg",
+      "cover_url": "/runtime/detect_compare_jobs/detect_compare_e124bdae09/detect_vs.jpg",
+      "report_url": "/runtime/detect_compare_jobs/detect_compare_e124bdae09/index.html",
+      "metrics_url": "/runtime/detect_compare_jobs/detect_compare_e124bdae09/enhanced_detections.json",
+      "tags": [
+        "下游检测",
+        "对照图"
+      ],
+      "extra": {
+        "raw_image_url": "/runtime/enhance_jobs/enhance_41570f33ca/result/improved_mpcgan/assets/input/000115.jpg",
+        "enhanced_image_url": "/runtime/enhance_jobs/enhance_41570f33ca/result/improved_mpcgan/assets/output/000115_fake.png",
+        "raw_json_url": "/runtime/detect_compare_jobs/detect_compare_e124bdae09/raw_detections.json",
+        "enhanced_json_url": "/runtime/detect_compare_jobs/detect_compare_e124bdae09/enhanced_detections.json"
+      }
+    }
+  ],
+  "detectors": [],
+  "runtime_mode": "static"
+}

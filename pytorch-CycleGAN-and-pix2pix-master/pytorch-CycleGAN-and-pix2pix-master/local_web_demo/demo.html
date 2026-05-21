@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>海眸智澈 · 一键演示流程页</title>
+    <link rel="icon" type="image/png" href="./logo.png">
+    <link rel="stylesheet" href="./styles.css?v=20260420-1">
+</head>
+<body>
+    <div class="chart-page">
+        <section class="chart-hero">
+            <article class="card">
+                <div class="page-brand">
+                    <img class="page-brand-mark" src="./logo.png" alt="海眸智澈 LOGO">
+                    <div>
+                        <div class="page-brand-title">海眸智澈</div>
+                        <div class="page-brand-subtitle">一键演示流程页</div>
+                    </div>
+                </div>
+                <div class="eyebrow">One Click Demo Flow</div>
+                <h1 style="margin:18px 0 12px;font-size:40px;">一键演示流程页</h1>
+                <p style="margin:0;color:#bfd3ec;line-height:1.9;">
+                    该页面将首页封面、智能增强、综合对比、图表页和归档页串联为完整的软件应用展示流程。
+                    你可以按步骤切换，也可以自动播放，让整场展示更像正式产品路演。
+                </p>
+                <div class="flow-controls" style="margin-top:18px;">
+                    <button id="flowStart" class="primary-button" type="button">启动一键演示</button>
+                    <button id="flowNext" class="ghost-button" type="button">下一步</button>
+                    <button id="flowAuto" class="ghost-button" type="button">自动播放</button>
+                    <a class="ghost-link" href="./index.html">返回交互首页</a>
+                </div>
+            </article>
+            <article class="card">
+                <div class="section-head">
+                    <div>
+                        <h2>当前讲解提示</h2>
+                        <p>根据步骤自动切换讲解文案，便于你现场进行软件应用展示时按节奏输出。</p>
+                    </div>
+                </div>
+                <div id="flowNarrative" class="bullet-list"></div>
+                <div class="flow-progress" style="margin-top:16px;">
+                    <div id="flowProgressBar" class="flow-progress-bar"></div>
+                </div>
+            </article>
+        </section>
+
+        <section class="flow-shell" style="margin-top:22px;">
+            <article class="card">
+                <div id="flowList" class="flow-list"></div>
+            </article>
+            <article class="card flow-preview">
+                <div class="section-head">
+                    <div>
+                        <h2 id="flowStepTitle">等待开始</h2>
+                        <p id="flowStepDesc">点击左侧步骤或上方按钮开始演示。</p>
+                    </div>
+                    <a id="flowOpenPage" class="ghost-link disabled" href="#" target="_blank" rel="noopener">新标签打开当前页</a>
+                </div>
+                <iframe id="flowPreview" class="flow-preview-frame" title="演示流程预览"></iframe>
+            </article>
+        </section>
+    </div>
+
+    <script src="./demo.js"></script>
+</body>
+</html>
+
+

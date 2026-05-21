@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>海眸智澈 · 结果归档案例库</title>
+    <link rel="icon" type="image/png" href="./logo.png">
+    <link rel="stylesheet" href="./styles.css?v=20260420-1">
+</head>
+<body>
+    <div class="chart-page">
+        <section class="chart-hero">
+            <article class="card">
+                <div class="page-brand">
+                    <img class="page-brand-mark" src="./logo.png" alt="海眸智澈 LOGO">
+                    <div>
+                        <div class="page-brand-title">海眸智澈</div>
+                        <div class="page-brand-subtitle">结果归档案例库</div>
+                    </div>
+                </div>
+                <div class="eyebrow">Result Archive Library</div>
+                <h1 style="margin:18px 0 12px;font-size:40px;">自动归档案例库</h1>
+                <p style="margin:0;color:#bfd3ec;line-height:1.9;">
+                    每次运行单图增强、综合对比或检测对照后，系统都会自动保存封面图、摘要和报告入口。
+                    这使作品不仅能现场演示，也能持续沉淀为可复用的软件应用展示案例库。
+                </p>
+                <div class="link-row" style="margin-top:18px;">
+                    <a class="ghost-link" href="./index.html">返回交互首页</a>
+                    <a class="ghost-link" href="./benchmark.html">打开图表页</a>
+                    <a class="ghost-link" href="./demo.html">打开演示流程页</a>
+                </div>
+            </article>
+            <article class="card">
+                <div class="section-head">
+                    <div>
+                        <h2>归档说明</h2>
+                        <p>适合展示前整理高质量案例，也适合后续做成果手册、官网案例墙和线上展示库。</p>
+                    </div>
+                </div>
+                <div id="archiveStory" class="bullet-list"></div>
+            </article>
+        </section>
+        <section class="card" style="margin-top:22px;">
+            <div class="section-head">
+                <div>
+                    <h2>案例总览</h2>
+                    <p>自动按时间倒序展示最近归档的增强、综合对比和检测对照案例。</p>
+                </div>
+                <div id="archiveSummary" class="metric-pills"></div>
+            </div>
+            <div id="archiveStatsGrid" class="archive-stats-grid"></div>
+            <div class="section-head" style="margin-top:18px;">
+                <div>
+                    <h2>标签筛选</h2>
+                    <p>按标签快速聚焦重点案例，形成更像产品后台的案例运营体验。</p>
+                </div>
+            </div>
+            <div id="archiveTagChips" class="tag-chip-row"></div>
+            <div class="controls-grid archive-controls">
+                <label class="field">
+                    <span>关键词搜索</span>
+                    <input id="archiveSearch" type="text" placeholder="搜索标题、摘要或模型">
+                </label>
+                <label class="field">
+                    <span>案例类型</span>
+                    <select id="archiveTypeFilter">
+                        <option value="all">全部类型</option>
+                    </select>
+                </label>
+                <label class="field">
+                    <span>模型筛选</span>
+                    <select id="archiveModelFilter">
+                        <option value="all">全部模型</option>
+                    </select>
+                </label>
+                <label class="field">
+                    <span>排序方式</span>
+                    <select id="archiveSort">
+                        <option value="newest">最新优先</option>
+                        <option value="oldest">最早优先</option>
+                        <option value="model">按模型名称</option>
+                    </select>
+                </label>
+            </div>
+            <div class="archive-toolbar">
+                <div id="archiveFilterSummary" class="sidebar-tip">正在读取归档数据</div>
+                <button id="archiveReset" class="ghost-button" type="button">重置筛选</button>
+            </div>
+            <div class="section-head" style="margin-top:18px;">
+                <div>
+                    <h2>重点案例置顶</h2>
+                    <p>优先展示主推模型、综合对比和最近生成的高价值案例。</p>
+                </div>
+            </div>
+            <div id="archivePinnedGrid" class="archive-grid"></div>
+            <div class="section-head" style="margin-top:18px;">
+                <div>
+                    <h2>全部案例</h2>
+                    <p>支持展开卡片查看更多信息，适合用作软件作品的案例管理页。</p>
+                </div>
+            </div>
+            <div id="archiveLibrary" class="archive-grid archive-page-grid"></div>
+        </section>
+    </div>
+    <script src="./archive.js?v=20260420-2"></script>
+</body>
+</html>

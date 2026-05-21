@@ -1,0 +1,78 @@
+.git/
+.trae/
+.uploads/
+.wheels/
+
+# Python cache and environments
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage*
+.venv/
+.venv*/
+venv/
+env/
+ENV/
+
+# Local logs and runtime files
+*.log
+*.tmp
+*.bak
+*.swp
+*.pid
+**/runtime/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Datasets and large local resources
+datasets/
+UIEB/
+UIEB_Unpaired/
+EUVP/
+EUVP Dataset/
+EUVP_Unpaired/
+quick_check_samples/
+
+# Model weights and training artifacts
+*.pt
+*.pth
+**/checkpoints/
+results/
+runs/
+
+# Archives and packaged deliverables
+*.whl
+*.pdf
+*.doc
+*.docx
+*.zip
+*.7z
+*.rar
+*.tar
+*.gz
+PACK_海眸智澈_20260422/
+PACK_海眸智澈_source_500MB_20260423/
+SUBMIT_海眸智澈_代表性素材_20260425/
+SUBMIT_海眸智澈_源代码_20260425/
+
+# Generated outputs
+$out/
+out.log
+demo_server_stdout.log
+demo_server_stderr.log
+pip_yolo.log
+results_*/
+ppt_visuals/
+docs/figures/
+ICIP_MPCycleGAN_Paper/figures/

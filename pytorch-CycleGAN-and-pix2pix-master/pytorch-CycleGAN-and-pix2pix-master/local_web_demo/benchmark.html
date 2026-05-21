@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>海眸智澈 · Benchmark 可视化图表页</title>
+    <link rel="icon" type="image/png" href="./logo.png">
+    <link rel="stylesheet" href="./styles.css?v=20260420-1">
+</head>
+<body>
+    <div class="chart-page">
+        <section class="chart-hero">
+            <article class="card">
+                <div class="page-brand">
+                    <img class="page-brand-mark" src="./logo.png" alt="海眸智澈 LOGO">
+                    <div>
+                        <div class="page-brand-title">海眸智澈</div>
+                        <div class="page-brand-subtitle">Benchmark 可视化图表页</div>
+                    </div>
+                </div>
+                <div class="eyebrow">Benchmark Visualization</div>
+                <h1 style="margin:18px 0 12px;font-size:40px;">水下图像增强指标可视化图表页</h1>
+                <p style="margin:0;color:#bfd3ec;line-height:1.9;">
+                    本页将传统方法、原始 CycleGAN 与改进模型在 EUVP / UIEB 上的关键指标转换为可视化图表，
+                    便于在软件应用展示中快速讲清楚“方法演进、性能变化与系统可信度”。
+                </p>
+                <div class="metric-pills">
+                    <span class="metric-pill">PSNR / SSIM 结构恢复</span>
+                    <span class="metric-pill">UCIQE / UIQM 感知质量</span>
+                    <span class="metric-pill">传统方法 vs 原始 GAN vs 改进模型</span>
+                </div>
+                <div class="link-row" style="margin-top:18px;">
+                    <a class="ghost-link" href="./index.html">返回交互首页</a>
+                    <a class="ghost-link" href="./archive.html">打开结果归档页</a>
+                    <a class="ghost-link" href="./demo.html">打开演示流程页</a>
+                </div>
+            </article>
+            <article class="card">
+                <div class="section-head">
+                    <div>
+                        <h2>讲解建议</h2>
+                        <p>按“先整体、后对比、再落应用”的顺序来讲，更适合软件应用与开发赛道展示。</p>
+                    </div>
+                </div>
+                <div id="chartStory" class="bullet-list"></div>
+            </article>
+        </section>
+        <section class="chart-grid">
+            <article class="chart-card">
+                <h2>数据集总览</h2>
+                <p>快速显示当前图表页读取到的数据集规模、模型数与传统方法数。</p>
+                <div id="chartSummary" class="metric-pills"></div>
+            </article>
+            <article class="chart-card">
+                <h2>结论速览</h2>
+                <p>自动从当前 benchmark 中提炼适合展示时口播的总结句。</p>
+                <div id="chartConclusions" class="bullet-list" style="margin-top:16px;"></div>
+            </article>
+        </section>
+        <section id="datasetCharts" class="chart-grid"></section>
+    </div>
+    <script src="./benchmark.js?v=20260420-2"></script>
+</body>
+</html>

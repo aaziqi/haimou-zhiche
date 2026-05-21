@@ -1,0 +1,334 @@
+﻿﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>海眸智澈 · 水下图像增强交互演示系统</title>
+    <link rel="icon" type="image/png" href="./logo.png">
+    <link rel="stylesheet" href="./styles.css?v=20260420-1">
+</head>
+<body>
+    <div class="ambient-surface" aria-hidden="true">
+        <span class="orb orb-a"></span>
+        <span class="orb orb-b"></span>
+        <span class="orb orb-c"></span>
+        <span class="grid-glow"></span>
+    </div>
+    <div id="deployModeBanner" class="deploy-mode-banner" hidden>
+        当前为线上展示版：可查看作品介绍、图表、案例与报告；实时增强、综合对比和检测功能仅在本地完整版开放。
+    </div>
+    <div class="shell">
+        <aside class="sidebar">
+            <div class="brand">
+                <img class="brand-mark" src="./logo.png" alt="海眸智澈 LOGO">
+                <div class="brand-copy">
+                    <div class="brand-title">海眸智澈</div>
+                    <div class="brand-subtitle">水下图像增强交互演示系统</div>
+                </div>
+            </div>
+            <nav class="nav">
+                <a class="nav-link active" href="#overview">作品总览</a>
+                <a class="nav-link" href="#enhance">智能增强</a>
+                <a class="nav-link" href="#compare">方案对比</a>
+                <a class="nav-link" href="#leaderboard">指标榜单</a>
+                <a class="nav-link" href="./benchmark.html">图表页</a>
+                <a class="nav-link" href="./archive.html">结果归档</a>
+                <a class="nav-link" href="./demo.html">演示流程</a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="sidebar-tip">参加赛道</div>
+                <div id="trackBadge" class="sidebar-track">软件应用与开发</div>
+            </div>
+        </aside>
+
+        <main class="main">
+            <section id="overview" class="hero card">
+                <div class="hero-copy">
+                    <div class="eyebrow">软件应用展示导向</div>
+                    <div class="live-row"><span class="live-dot"></span><span>实时演示模式已就绪，交互式讲解链路完整</span></div>
+                    <h1 id="projectTitle">海眸智澈：面向水下机器人视觉任务的智能图像增强平台</h1>
+                    <p id="projectSubtitle">基于改进 CycleGAN 的水下图像增强与可视化评测系统</p>
+                    <div class="dynamic-title-card">
+                        <span class="dynamic-title-label">动态标题切换</span>
+                        <strong id="dynamicHeroKeyword">智能图像增强平台</strong>
+                    </div>
+                    <div class="hero-tags">
+                        <span class="tag">上传单图实时演示</span>
+                        <span class="tag">传统方法与 GAN 对比</span>
+                        <span class="tag">EUVP / UIEB 榜单支撑</span>
+                        <span class="tag">软件作品系统化展示</span>
+                    </div>
+                    <div class="counter-strip">
+                        <div class="counter-card">
+                            <span>模型预设</span>
+                            <strong id="counterModels">0</strong>
+                        </div>
+                        <div class="counter-card">
+                            <span>归档案例</span>
+                            <strong id="counterArchives">0</strong>
+                        </div>
+                        <div class="counter-card">
+                            <span>核心数据集</span>
+                            <strong id="counterDatasets">0</strong>
+                        </div>
+                    </div>
+                    <div class="cover-actions">
+                        <a class="hero-button primary-link" href="#enhance">进入交互演示</a>
+                        <a class="hero-button secondary-link" href="./benchmark.html" target="_blank" rel="noopener">打开图表页</a>
+                        <a class="hero-button secondary-link" href="./demo.html" target="_blank" rel="noopener">打开演示流程页</a>
+                    </div>
+                </div>
+                <div class="hero-metrics hero-cover">
+                    <div class="cover-badge">软件应用展示包装风格</div>
+                    <div class="cover-title">作品封面区</div>
+                    <div class="cover-subtitle">算法可信度、系统完整度、视觉表现力三线并举</div>
+                    <div class="cover-metric-list">
+                        <div class="metric-card">
+                            <span>主推模型</span>
+                            <strong id="featuredModel">改进模型 MPCGAN</strong>
+                        </div>
+                        <div class="metric-card">
+                            <span>参加赛道</span>
+                            <strong id="featuredTrack">软件应用与开发</strong>
+                        </div>
+                        <div class="metric-card">
+                            <span>核心口号</span>
+                            <strong id="featuredSlogan">让浑浊水下影像更清晰、更自然、更可用</strong>
+                        </div>
+                    </div>
+                    <div class="hero-visual-stage">
+                        <div class="hero-visual-frame">
+                            <img id="heroVisualInput" alt="原始案例封面">
+                            <img id="heroVisualOutput" alt="增强案例主图">
+                            <div class="hero-visual-badge">封面视觉主图</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="achievement-strip">
+                <article class="achievement-card">
+                    <span class="achievement-label">作品成果卡片</span>
+                    <strong id="achievementHeadline">改进模型 MPCGAN</strong>
+                    <p id="achievementDescription">面向水下图像增强任务的主推方案，兼顾视觉效果与客观指标表现。</p>
+                </article>
+                <article class="achievement-card">
+                    <span class="achievement-label">客观指标表现</span>
+                    <strong id="achievementMetricA">EUVP / UIEB 双数据集</strong>
+                    <p id="achievementMetricADesc">支持从 benchmark 数据自动更新主观与客观指标摘要。</p>
+                </article>
+                <article class="achievement-card">
+                    <span class="achievement-label">系统能力</span>
+                    <strong id="achievementMetricB">上传增强 + 对比展示</strong>
+                    <p id="achievementMetricBDesc">支持上传、切换模型、报告生成与对比演示。</p>
+                </article>
+            </section>
+
+            <section class="poster-hero card">
+                <div class="poster-copy">
+                    <div class="eyebrow">首页展示海报区</div>
+                    <h2>面向软件应用展示的正式产品化首页</h2>
+                    <p>这一屏用于开场展示作品定位、核心成果和系统能力，强调“算法实力 + 平台化能力 + 场景价值”的统一表达，适合作为软件应用展示与路演开场页。</p>
+                    <div class="poster-tags">
+                        <span class="tag">海洋监测</span>
+                        <span class="tag">水下机器人</span>
+                        <span class="tag">图像增强</span>
+                        <span class="tag">交互演示</span>
+                    </div>
+                    <div class="cover-actions">
+                        <a class="hero-button primary-link" href="./demo.html" target="_blank" rel="noopener">打开演示流程页</a>
+                        <a class="hero-button secondary-link" href="./archive.html" target="_blank" rel="noopener">打开结果归档页</a>
+                    </div>
+                </div>
+                <div class="poster-showcase">
+                    <div class="poster-panel poster-main">
+                        <div class="poster-label">主展示成果</div>
+                        <strong id="posterMainValue">改进模型 MPCGAN</strong>
+                        <span id="posterMainDesc">作为首页封面区的核心展示成果，突出增强效果与系统完成度。</span>
+                    </div>
+                    <div class="poster-grid">
+                        <div class="poster-panel">
+                            <div class="poster-label">性能指标</div>
+                            <strong id="posterMetricValue">PSNR / SSIM / UCIQE / UIQM</strong>
+                            <span id="posterMetricDesc">支持自动汇总 benchmark 数据，用于展示模型性能与泛化能力。</span>
+                        </div>
+                        <div class="poster-panel">
+                            <div class="poster-label">产品化能力</div>
+                            <strong id="posterSystemValue">交互演示 + 自动报告</strong>
+                            <span id="posterSystemDesc">支持上传增强、方法对比、图表页和归档案例库</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="grid-two">
+                <article class="card">
+                    <div class="section-head">
+                        <div>
+                            <h2>作品亮点</h2>
+                            <p>围绕算法、系统、评测和展示四个维度构建完整软件应用作品。</p>
+                        </div>
+                    </div>
+                    <div id="highlights" class="bullet-list"></div>
+                </article>
+                <article class="card">
+                    <div class="section-head">
+                        <div>
+                            <h2>创新提炼</h2>
+                            <p>便于直接写入申报书、PPT 和演讲稿。</p>
+                        </div>
+                    </div>
+                    <div id="innovations" class="bullet-list"></div>
+                </article>
+            </section>
+
+            <section id="enhance" class="card">
+                <div class="section-head">
+                    <div>
+                        <h2>智能增强演示</h2>
+                        <p>上传一张图片，切换不同模型，在线查看前后对比与自动生成的增强报告。</p>
+                    </div>
+                    <div id="enhanceStatus" class="status-chip">等待上传</div>
+                </div>
+                <div class="controls-grid">
+                    <label class="field">
+                        <span>选择模型</span>
+                        <select id="modelSelect"></select>
+                    </label>
+                    <label class="field">
+                        <span>上传图片</span>
+                        <input id="enhanceFile" type="file" accept="image/png,image/jpeg,image/jpg,image/bmp,image/tiff">
+                    </label>
+                    <button id="runEnhance" class="primary-button">开始增强演示</button>
+                </div>
+                <div class="result-grid">
+                    <div class="stage-stack">
+                        <div class="compare-box">
+                            <div class="compare-header">
+                                <span>前后拖拽对比</span>
+                                <input id="compareSlider" type="range" min="0" max="100" value="50">
+                            </div>
+                            <div class="compare-stage">
+                                <img id="compareBefore" class="compare-image base" alt="原始图像">
+                                <div id="compareAfterMask" class="compare-mask">
+                                    <img id="compareAfter" class="compare-image overlay" alt="增强结果">
+                                </div>
+                                <div id="compareHandle" class="compare-handle"></div>
+                            </div>
+                        </div>
+
+                        <div class="detect-hero">
+                            <div class="detect-hero-head">
+                                <div>
+                                    <div class="detect-title">下游检测对照图</div>
+                                    <div class="detect-subtitle">左侧为原图检测结果，右侧为增强图检测结果。</div>
+                                </div>
+                                <div id="detectStatus" class="status-chip">等待检测</div>
+                            </div>
+                            <div class="detect-hero-stage">
+                                <img id="detectVis" alt="检测可视化">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="side-stack">
+                        <div class="result-side">
+                            <div id="enhanceMeta" class="meta-panel empty">等待生成结果</div>
+                            <div id="enhanceMetrics" class="metrics-grid"></div>
+                            <div class="link-row">
+                                <a id="enhanceReportLink" class="ghost-link disabled" href="#" target="_blank" rel="noopener">打开增强报告</a>
+                                <a id="enhanceCsvLink" class="ghost-link disabled" href="#" target="_blank" rel="noopener">查看指标 CSV</a>
+                                <button id="downloadCurrentResult" class="ghost-button" type="button" disabled>下载当前结果</button>
+                                <button id="exportPresentationShot" class="ghost-button" type="button" disabled>导出演示截图</button>
+                            </div>
+                        </div>
+
+                        <div class="detect-side">
+                            <div class="detect-panel-title">检测结果</div>
+                            <div class="detect-controls">
+                                <label class="field">
+                                    <span>检测器</span>
+                                    <select id="detectorSelect"></select>
+                                </label>
+                                <label class="field">
+                                    <span>置信度阈值 <strong id="detectConfValue">0.25</strong></span>
+                                    <input id="detectConf" type="range" min="0" max="1" step="0.05" value="0.25">
+                                </label>
+                            </div>
+                            <button id="runDetect" class="primary-button" type="button" disabled>运行检测</button>
+                            <div id="detectSummary" class="meta-panel empty">等待检测结果</div>
+                            <div id="detectList" class="detect-list"></div>
+                            <div class="link-row">
+                                <a id="detectReportLink" class="ghost-link disabled" href="#" target="_blank" rel="noopener">打开对照报告</a>
+                                <a id="detectRawJsonLink" class="ghost-link disabled" href="#" target="_blank" rel="noopener">下载原图 JSON</a>
+                                <a id="detectEnhJsonLink" class="ghost-link disabled" href="#" target="_blank" rel="noopener">下载增强 JSON</a>
+                                <button id="downloadDetectVis" class="ghost-button" type="button" disabled>下载可视化图</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="compare" class="card">
+                <div class="section-head">
+                    <div>
+                        <h2>传统方法 vs 原始 CycleGAN vs 改进模型</h2>
+                        <p>同一张图上同时比较传统增强方法、原始 CycleGAN 基线与当前主推模型，适合现场直观演示。</p>
+                    </div>
+                    <div id="compareStatus" class="status-chip">等待上传</div>
+                </div>
+                <div class="controls-grid">
+                    <label class="field">
+                        <span>传统方法</span>
+                        <select id="traditionalSelect"></select>
+                    </label>
+                    <label class="field">
+                        <span>改进模型</span>
+                        <select id="compareModelSelect"></select>
+                    </label>
+                    <label class="field">
+                        <span>上传图片</span>
+                        <input id="compareFile" type="file" accept="image/png,image/jpeg,image/jpg,image/bmp,image/tiff">
+                    </label>
+                    <button id="runCompare" class="primary-button">生成综合对比</button>
+                </div>
+                <div id="comparisonCards" class="comparison-cards"></div>
+                <div class="link-row">
+                    <a id="compareReportLink" class="ghost-link disabled" href="#" target="_blank" rel="noopener">打开综合对比报告</a>
+                </div>
+            </section>
+
+            <section id="leaderboard" class="card">
+                <div class="section-head">
+                    <div>
+                        <h2>指标榜单</h2>
+                        <p>基于现有 benchmark 汇总展示 EUVP 与 UIEB 上的代表性方法表现。</p>
+                    </div>
+                    <div class="link-row">
+                        <a class="ghost-link" href="./benchmark.html" target="_blank" rel="noopener">打开可视化图表页</a>
+                    </div>
+                </div>
+                <div id="benchmarkHighlights" class="chart-preview-grid"></div>
+                <div id="benchmarkPanels" class="benchmark-grid"></div>
+            </section>
+
+            <section id="archivePreview" class="card">
+                <div class="section-head">
+                    <div>
+                        <h2>结果归档案例库</h2>
+                        <p>每次上传演示后的结果都会自动归档，可形成可复用的软件应用展示案例库与成果积累。</p>
+                    </div>
+                    <div class="link-row">
+                        <a class="ghost-link" href="./archive.html" target="_blank" rel="noopener">打开完整归档页</a>
+                    </div>
+                </div>
+                <div id="archivePreviewGrid" class="archive-grid"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="./app.js?v=20260420-5"></script>
+</body>
+</html>
+
+

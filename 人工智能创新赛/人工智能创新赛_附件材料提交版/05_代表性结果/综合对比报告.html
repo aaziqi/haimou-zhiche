@@ -1,0 +1,141 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>水下图像增强综合对比页</title>
+        <style>
+            * { box-sizing: border-box; }
+            body { margin: 0; font-family: "Microsoft YaHei", Arial, sans-serif; background: #07111f; color: #eef5ff; }
+            .wrap { width: min(1240px, calc(100% - 40px)); margin: 0 auto; padding: 28px 0 48px; }
+            .hero { padding: 28px; border-radius: 24px; background: linear-gradient(135deg, #18457d, #0a1830); border: 1px solid rgba(120,180,255,0.2); }
+            .hero h1 { margin: 0 0 10px; font-size: 34px; }
+            .hero p { margin: 0; line-height: 1.8; color: #adc4e4; }
+            .compare-card, .bench-card { margin-top: 22px; padding: 22px; border-radius: 22px; background: rgba(11, 24, 44, 0.88); border: 1px solid rgba(120,180,255,0.14); }
+            .compare-head { display: flex; justify-content: space-between; gap: 18px; align-items: center; margin-bottom: 18px; }
+            .compare-badge { display: inline-block; margin-bottom: 10px; padding: 6px 12px; border-radius: 999px; background: rgba(75,195,255,0.18); color: #d8f5ff; }
+            .compare-head h2 { margin: 0; font-size: 24px; }
+            .compare-desc { max-width: 480px; color: #a8bfdc; line-height: 1.7; }
+            .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+            .compare-panel { padding: 14px; border-radius: 18px; background: rgba(255,255,255,0.03); }
+            .compare-title { margin-bottom: 10px; color: #9cb4d3; }
+            .compare-panel img { width: 100%; height: 280px; object-fit: contain; border-radius: 14px; background: rgba(255,255,255,0.02); }
+            .metric-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 16px; }
+            .metric-box { padding: 14px; border-radius: 16px; background: rgba(255,255,255,0.03); }
+            .metric-box span { display: block; font-size: 13px; color: #98b1cf; margin-bottom: 8px; }
+            .metric-box strong { font-size: 22px; }
+            table { width: 100%; border-collapse: collapse; }
+            th, td { padding: 12px 10px; border-bottom: 1px solid rgba(255,255,255,0.08); text-align: left; }
+            th { color: #9cb4d3; font-weight: 600; }
+            @media (max-width: 840px) {
+                .compare-head { flex-direction: column; align-items: flex-start; }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <section class="hero">
+                <h1>传统方法 vs 原始 CycleGAN vs 改进模型</h1>
+                <p>该页面面向竞赛答辩场景，统一展示传统增强方法、原始无配对增强基线与改进模型的单图对比结果，并结合 EUVP / UIEB 的基准数据说明方法演进价值。</p>
+            </section>
+            
+            <section class="compare-card">
+                <div class="compare-head">
+                    <div>
+                        <div class="compare-badge">传统方法</div>
+                        <h2>Gray World + CLAHE</h2>
+                    </div>
+                    <div class="compare-desc">传统组合增强方法，先纠偏色再增强局部对比。</div>
+                </div>
+                <div class="compare-grid">
+                    <div class="compare-panel">
+                        <div class="compare-title">输入图像</div>
+                        <img src="/runtime/compare_jobs/compare_07ca17a16e/input/nm_1up.jpg" alt="input">
+                    </div>
+                    <div class="compare-panel">
+                        <div class="compare-title">输出结果</div>
+                        <img src="/runtime/compare_jobs/compare_07ca17a16e/traditional/nm_1up_grayworld_clahe.png" alt="Gray World + CLAHE">
+                    </div>
+                </div>
+                <div class="metric-row">
+                    <div class="metric-box"><span>输出 UCIQE</span><strong>28.5832</strong></div>
+                    <div class="metric-box"><span>输出 UIQM</span><strong>5.0539</strong></div>
+                    <div class="metric-box"><span>UCIQE 提升</span><strong>-0.8654</strong></div>
+                    <div class="metric-box"><span>UIQM 提升</span><strong>0.5216</strong></div>
+                </div>
+            </section>
+            
+            <section class="compare-card">
+                <div class="compare-head">
+                    <div>
+                        <div class="compare-badge">基线模型</div>
+                        <h2>原始 CycleGAN</h2>
+                    </div>
+                    <div class="compare-desc">无配对图像翻译基线模型，作为原始 GAN 版本对照。</div>
+                </div>
+                <div class="compare-grid">
+                    <div class="compare-panel">
+                        <div class="compare-title">输入图像</div>
+                        <img src="/runtime/compare_jobs/compare_07ca17a16e/input/nm_1up.jpg" alt="input">
+                    </div>
+                    <div class="compare-panel">
+                        <div class="compare-title">输出结果</div>
+                        <img src="/runtime/compare_jobs/compare_07ca17a16e/classic/classic_cyclegan/assets/output/nm_1up_fake.png" alt="原始 CycleGAN">
+                    </div>
+                </div>
+                <div class="metric-row">
+                    <div class="metric-box"><span>输出 UCIQE</span><strong>27.7135</strong></div>
+                    <div class="metric-box"><span>输出 UIQM</span><strong>4.6374</strong></div>
+                    <div class="metric-box"><span>UCIQE 提升</span><strong>-1.7351</strong></div>
+                    <div class="metric-box"><span>UIQM 提升</span><strong>0.1052</strong></div>
+                </div>
+            </section>
+            
+            <section class="compare-card">
+                <div class="compare-head">
+                    <div>
+                        <div class="compare-badge">主推模型</div>
+                        <h2>改进模型 MPCGAN</h2>
+                    </div>
+                    <div class="compare-desc">当前最适合竞赛主推的增强版本，兼顾视觉效果与客观指标。</div>
+                </div>
+                <div class="compare-grid">
+                    <div class="compare-panel">
+                        <div class="compare-title">输入图像</div>
+                        <img src="/runtime/compare_jobs/compare_07ca17a16e/input/nm_1up.jpg" alt="input">
+                    </div>
+                    <div class="compare-panel">
+                        <div class="compare-title">输出结果</div>
+                        <img src="/runtime/compare_jobs/compare_07ca17a16e/improved/improved_mpcgan/assets/output/nm_1up_fake.png" alt="改进模型 MPCGAN">
+                    </div>
+                </div>
+                <div class="metric-row">
+                    <div class="metric-box"><span>输出 UCIQE</span><strong>26.6554</strong></div>
+                    <div class="metric-box"><span>输出 UIQM</span><strong>4.7724</strong></div>
+                    <div class="metric-box"><span>UCIQE 提升</span><strong>-2.7932</strong></div>
+                    <div class="metric-box"><span>UIQM 提升</span><strong>0.2401</strong></div>
+                </div>
+            </section>
+            
+            
+            <section class="bench-card">
+                <h3>EUVP 数据集表现</h3>
+                <table>
+                    <thead><tr><th>方法</th><th>PSNR</th><th>SSIM</th><th>UCIQE</th><th>UIQM</th></tr></thead>
+                    <tbody><tr><td>传统方法</td><td>16.5866</td><td>0.7023</td><td>27.2447</td><td>6.0583</td></tr><tr><td>原始 CycleGAN</td><td>22.8155</td><td>0.7833</td><td>25.9335</td><td>5.3362</td></tr><tr><td>改进模型</td><td>22.9074</td><td>0.7946</td><td>25.8164</td><td>5.4069</td></tr></tbody>
+                </table>
+            </section>
+            
+            <section class="bench-card">
+                <h3>UIEB 泛化表现</h3>
+                <table>
+                    <thead><tr><th>方法</th><th>PSNR</th><th>SSIM</th><th>UCIQE</th><th>UIQM</th></tr></thead>
+                    <tbody><tr><td>传统方法</td><td>17.6379</td><td>0.8197</td><td>25.0226</td><td>6.7676</td></tr><tr><td>原始 CycleGAN</td><td>17.8397</td><td>0.6261</td><td>23.2519</td><td>10.4775</td></tr><tr><td>改进模型</td><td>17.5409</td><td>0.6242</td><td>22.4599</td><td>10.5018</td></tr></tbody>
+                </table>
+            </section>
+            
+        </div>
+    </body>
+    </html>
+    

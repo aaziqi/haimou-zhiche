@@ -1,0 +1,422 @@
+
+    <html>
+    <head>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .comparison { margin-bottom: 40px; border-bottom: 1px solid #ccc; padding-bottom: 20px; }
+        .images { display: flex; justify-content: space-around; }
+        .img-container { text-align: center; }
+        img { max-width: 300px; max-height: 300px; }
+        h3 { color: #333; }
+    </style>
+    </head>
+    <body>
+    <h1>Underwater Image Enhancement User Study</h1>
+    <p>Please rate each method from 1 (Worst) to 5 (Best) based on color naturalness and detail clarity.</p>
+    <form>
+    
+        <div class="comparison">
+            <h3>Scene 1</h3>
+            <div class="images">
+                <div class="img-container">
+                    <img src="images/0_input.png">
+                    <p>Input</p>
+                </div>
+                <div class="img-container">
+                    <img src="images/0_methodA.png">
+                    <p>Method 1</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s0_m1"></label>
+                </div>
+                <div class="img-container">
+                    <img src="images/0_methodB.png">
+                    <p>Method 2</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s0_m2"></label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison">
+            <h3>Scene 2</h3>
+            <div class="images">
+                <div class="img-container">
+                    <img src="images/1_input.png">
+                    <p>Input</p>
+                </div>
+                <div class="img-container">
+                    <img src="images/1_methodB.png">
+                    <p>Method 1</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s1_m1"></label>
+                </div>
+                <div class="img-container">
+                    <img src="images/1_methodA.png">
+                    <p>Method 2</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s1_m2"></label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison">
+            <h3>Scene 3</h3>
+            <div class="images">
+                <div class="img-container">
+                    <img src="images/2_input.png">
+                    <p>Input</p>
+                </div>
+                <div class="img-container">
+                    <img src="images/2_methodA.png">
+                    <p>Method 1</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s2_m1"></label>
+                </div>
+                <div class="img-container">
+                    <img src="images/2_methodB.png">
+                    <p>Method 2</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s2_m2"></label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison">
+            <h3>Scene 4</h3>
+            <div class="images">
+                <div class="img-container">
+                    <img src="images/3_input.png">
+                    <p>Input</p>
+                </div>
+                <div class="img-container">
+                    <img src="images/3_methodA.png">
+                    <p>Method 1</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s3_m1"></label>
+                </div>
+                <div class="img-container">
+                    <img src="images/3_methodB.png">
+                    <p>Method 2</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s3_m2"></label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison">
+            <h3>Scene 5</h3>
+            <div class="images">
+                <div class="img-container">
+                    <img src="images/4_input.png">
+                    <p>Input</p>
+                </div>
+                <div class="img-container">
+                    <img src="images/4_methodA.png">
+                    <p>Method 1</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s4_m1"></label>
+                </div>
+                <div class="img-container">
+                    <img src="images/4_methodB.png">
+                    <p>Method 2</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s4_m2"></label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison">
+            <h3>Scene 6</h3>
+            <div class="images">
+                <div class="img-container">
+                    <img src="images/5_input.png">
+                    <p>Input</p>
+                </div>
+                <div class="img-container">
+                    <img src="images/5_methodB.png">
+                    <p>Method 1</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s5_m1"></label>
+                </div>
+                <div class="img-container">
+                    <img src="images/5_methodA.png">
+                    <p>Method 2</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s5_m2"></label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison">
+            <h3>Scene 7</h3>
+            <div class="images">
+                <div class="img-container">
+                    <img src="images/6_input.png">
+                    <p>Input</p>
+                </div>
+                <div class="img-container">
+                    <img src="images/6_methodA.png">
+                    <p>Method 1</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s6_m1"></label>
+                </div>
+                <div class="img-container">
+                    <img src="images/6_methodB.png">
+                    <p>Method 2</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s6_m2"></label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison">
+            <h3>Scene 8</h3>
+            <div class="images">
+                <div class="img-container">
+                    <img src="images/7_input.png">
+                    <p>Input</p>
+                </div>
+                <div class="img-container">
+                    <img src="images/7_methodB.png">
+                    <p>Method 1</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s7_m1"></label>
+                </div>
+                <div class="img-container">
+                    <img src="images/7_methodA.png">
+                    <p>Method 2</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s7_m2"></label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison">
+            <h3>Scene 9</h3>
+            <div class="images">
+                <div class="img-container">
+                    <img src="images/8_input.png">
+                    <p>Input</p>
+                </div>
+                <div class="img-container">
+                    <img src="images/8_methodA.png">
+                    <p>Method 1</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s8_m1"></label>
+                </div>
+                <div class="img-container">
+                    <img src="images/8_methodB.png">
+                    <p>Method 2</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s8_m2"></label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison">
+            <h3>Scene 10</h3>
+            <div class="images">
+                <div class="img-container">
+                    <img src="images/9_input.png">
+                    <p>Input</p>
+                </div>
+                <div class="img-container">
+                    <img src="images/9_methodB.png">
+                    <p>Method 1</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s9_m1"></label>
+                </div>
+                <div class="img-container">
+                    <img src="images/9_methodA.png">
+                    <p>Method 2</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s9_m2"></label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison">
+            <h3>Scene 11</h3>
+            <div class="images">
+                <div class="img-container">
+                    <img src="images/10_input.png">
+                    <p>Input</p>
+                </div>
+                <div class="img-container">
+                    <img src="images/10_methodB.png">
+                    <p>Method 1</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s10_m1"></label>
+                </div>
+                <div class="img-container">
+                    <img src="images/10_methodA.png">
+                    <p>Method 2</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s10_m2"></label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison">
+            <h3>Scene 12</h3>
+            <div class="images">
+                <div class="img-container">
+                    <img src="images/11_input.png">
+                    <p>Input</p>
+                </div>
+                <div class="img-container">
+                    <img src="images/11_methodA.png">
+                    <p>Method 1</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s11_m1"></label>
+                </div>
+                <div class="img-container">
+                    <img src="images/11_methodB.png">
+                    <p>Method 2</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s11_m2"></label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison">
+            <h3>Scene 13</h3>
+            <div class="images">
+                <div class="img-container">
+                    <img src="images/12_input.png">
+                    <p>Input</p>
+                </div>
+                <div class="img-container">
+                    <img src="images/12_methodA.png">
+                    <p>Method 1</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s12_m1"></label>
+                </div>
+                <div class="img-container">
+                    <img src="images/12_methodB.png">
+                    <p>Method 2</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s12_m2"></label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison">
+            <h3>Scene 14</h3>
+            <div class="images">
+                <div class="img-container">
+                    <img src="images/13_input.png">
+                    <p>Input</p>
+                </div>
+                <div class="img-container">
+                    <img src="images/13_methodB.png">
+                    <p>Method 1</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s13_m1"></label>
+                </div>
+                <div class="img-container">
+                    <img src="images/13_methodA.png">
+                    <p>Method 2</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s13_m2"></label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison">
+            <h3>Scene 15</h3>
+            <div class="images">
+                <div class="img-container">
+                    <img src="images/14_input.png">
+                    <p>Input</p>
+                </div>
+                <div class="img-container">
+                    <img src="images/14_methodB.png">
+                    <p>Method 1</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s14_m1"></label>
+                </div>
+                <div class="img-container">
+                    <img src="images/14_methodA.png">
+                    <p>Method 2</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s14_m2"></label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison">
+            <h3>Scene 16</h3>
+            <div class="images">
+                <div class="img-container">
+                    <img src="images/15_input.png">
+                    <p>Input</p>
+                </div>
+                <div class="img-container">
+                    <img src="images/15_methodA.png">
+                    <p>Method 1</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s15_m1"></label>
+                </div>
+                <div class="img-container">
+                    <img src="images/15_methodB.png">
+                    <p>Method 2</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s15_m2"></label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison">
+            <h3>Scene 17</h3>
+            <div class="images">
+                <div class="img-container">
+                    <img src="images/16_input.png">
+                    <p>Input</p>
+                </div>
+                <div class="img-container">
+                    <img src="images/16_methodA.png">
+                    <p>Method 1</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s16_m1"></label>
+                </div>
+                <div class="img-container">
+                    <img src="images/16_methodB.png">
+                    <p>Method 2</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s16_m2"></label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison">
+            <h3>Scene 18</h3>
+            <div class="images">
+                <div class="img-container">
+                    <img src="images/17_input.png">
+                    <p>Input</p>
+                </div>
+                <div class="img-container">
+                    <img src="images/17_methodA.png">
+                    <p>Method 1</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s17_m1"></label>
+                </div>
+                <div class="img-container">
+                    <img src="images/17_methodB.png">
+                    <p>Method 2</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s17_m2"></label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison">
+            <h3>Scene 19</h3>
+            <div class="images">
+                <div class="img-container">
+                    <img src="images/18_input.png">
+                    <p>Input</p>
+                </div>
+                <div class="img-container">
+                    <img src="images/18_methodA.png">
+                    <p>Method 1</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s18_m1"></label>
+                </div>
+                <div class="img-container">
+                    <img src="images/18_methodB.png">
+                    <p>Method 2</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s18_m2"></label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison">
+            <h3>Scene 20</h3>
+            <div class="images">
+                <div class="img-container">
+                    <img src="images/19_input.png">
+                    <p>Input</p>
+                </div>
+                <div class="img-container">
+                    <img src="images/19_methodB.png">
+                    <p>Method 1</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s19_m1"></label>
+                </div>
+                <div class="img-container">
+                    <img src="images/19_methodA.png">
+                    <p>Method 2</p>
+                    <label>Score: <input type="number" min="1" max="5" name="s19_m2"></label>
+                </div>
+            </div>
+        </div>
+        
+    <button type="button" onclick="alert('Thank you! Please save this page as PDF or screenshot and send it back.')">Submit</button>
+    </form>
+    </body>
+    </html>
+    
