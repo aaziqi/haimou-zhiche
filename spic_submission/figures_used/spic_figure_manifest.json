@@ -1,0 +1,115 @@
+{
+  "fig1": "D:\\VScode\\Graduation project\\spic_submission\\figures_used\\Fig1_method_overview_spic.png",
+  "fig2": {
+    "path": "D:\\VScode\\Graduation project\\spic_submission\\figures_used\\Fig2_euvp_in_domain_qualitative_spic.png",
+    "cases": [
+      {
+        "key": "test_p206",
+        "note": "Structure and fidelity gain",
+        "zoom_box": [
+          77,
+          41,
+          72,
+          72
+        ]
+      },
+      {
+        "key": "test_p465",
+        "note": "Detail-preserving color recovery",
+        "zoom_box": [
+          85,
+          85,
+          60,
+          60
+        ]
+      },
+      {
+        "key": "test_p338",
+        "note": "High-improvement color restoration",
+        "zoom_box": [
+          0,
+          178,
+          72,
+          72
+        ]
+      },
+      {
+        "key": "test_p372",
+        "note": "Texture restoration",
+        "zoom_box": [
+          130,
+          23,
+          72,
+          72
+        ]
+      }
+    ]
+  },
+  "fig3": {
+    "path": "D:\\VScode\\Graduation project\\spic_submission\\figures_used\\Fig3_uieb_cross_domain_qualitative_spic.png",
+    "cases": [
+      {
+        "key": "650_img",
+        "note": "Texture recovery",
+        "zoom_box": [
+          85,
+          157,
+          72,
+          72
+        ]
+      },
+      {
+        "key": "327_img",
+        "note": "Structure-preserving gain",
+        "zoom_box": [
+          57,
+          29,
+          72,
+          72
+        ]
+      },
+      {
+        "key": "433_img",
+        "note": "Large fidelity shift under domain mismatch",
+        "zoom_box": [
+          108,
+          178,
+          72,
+          72
+        ]
+      },
+      {
+        "key": "315_img",
+        "note": "High-improvement cross-domain case",
+        "zoom_box": [
+          109,
+          178,
+          72,
+          72
+        ]
+      }
+    ]
+  },
+  "fig4": {
+    "path": "D:\\VScode\\Graduation project\\spic_submission\\figures_used\\Fig4_ablation_visualization_spic.png",
+    "selection": {
+      "key": "test_p245_",
+      "color_box": [
+        59,
+        66,
+        79,
+        79
+      ],
+      "texture_box": [
+        178,
+        76,
+        79,
+        79
+      ]
+    }
+  },
+  "fig5": {
+    "path": "D:\\VScode\\Graduation project\\spic_submission\\figures_used\\color_distribution_analysis.png",
+    "key": "test_p206"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "baseline_csv": "D:\\VScode\\Graduation project\\pytorch-CycleGAN-and-pix2pix-master\\pytorch-CycleGAN-and-pix2pix-master\\results\\benchmarks\\euvp\\models\\euvp_cyclegan_continue250_from200_s0\\epoch_250\\per_image.csv",
+  "candidate_csv": "D:\\VScode\\Graduation project\\pytorch-CycleGAN-and-pix2pix-master\\pytorch-CycleGAN-and-pix2pix-master\\results\\benchmarks\\euvp\\models\\euvp_mpcgan_continue250_from200_s0\\epoch_250\\per_image.csv",
+  "label_baseline": "CycleGAN (+50-epoch continuation)",
+  "label_candidate": "MP-CycleGAN (+50-epoch refinement)",
+  "metrics": {
+    "psnr": {
+      "matched_pairs": 515,
+      "baseline_mean": 22.639591,
+      "candidate_mean": 22.756288,
+      "mean_delta": 0.116697,
+      "median_delta": 0.138511,
+      "improved_count": 294,
+      "worsened_count": 221,
+      "tied_count": 0,
+      "win_rate": 0.570874,
+      "non_loss_rate": 0.570874,
+      "wilcoxon": {
+        "n_nonzero": 515,
+        "w_plus": 77176.0,
+        "w_minus": 55694.0,
+        "w_stat": 55694.0,
+        "z": -3.178867,
+        "p_two_sided": 0.00147852
+      }
+    },
+    "ssim": {
+      "matched_pairs": 515,
+      "baseline_mean": 0.788865,
+      "candidate_mean": 0.79046,
+      "mean_delta": 0.001595,
+      "median_delta": 0.001188,
+      "improved_count": 273,
+      "worsened_count": 242,
+      "tied_count": 0,
+      "win_rate": 0.530097,
+      "non_loss_rate": 0.530097,
+      "wilcoxon": {
+        "n_nonzero": 515,
+        "w_plus": 70662.0,
+        "w_minus": 62208.0,
+        "w_stat": 62208.0,
+        "z": -1.250918,
+        "p_two_sided": 0.21096455
+      }
+    }
+  }
+}

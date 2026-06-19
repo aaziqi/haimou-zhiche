@@ -1,0 +1,23 @@
+{
+  "figure": "D:\\VScode\\Graduation project\\spic_submission\\figures_used\\Fig_cut_fastcut_counterexample_spic.png",
+  "cases": [
+    {
+      "key": "test_p280",
+      "title": "Case 1",
+      "subtitle": "Artificial-like elongated edge and junction topology",
+      "mp_minus_cut_psnr": 9.4648,
+      "mp_minus_cut_ssim": 0.124926,
+      "mp_minus_fastcut_psnr": 9.7082,
+      "mp_minus_fastcut_ssim": 0.096424
+    },
+    {
+      "key": "test_p206",
+      "title": "Case 2",
+      "subtitle": "Dense coral texture and fine-detail stability",
+      "mp_minus_cut_psnr": 6.3619,
+      "mp_minus_cut_ssim": 0.049589,
+      "mp_minus_fastcut_psnr": 5.2359,
+      "mp_minus_fastcut_ssim": 0.010189
+    }
+  ]
+}

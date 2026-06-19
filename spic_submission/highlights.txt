@@ -1,0 +1,5 @@
+MP-CycleGAN stabilizes unpaired underwater image enhancement during training.
+Gray-world, gradient, and perceptual losses guide CycleGAN refinement.
+The method keeps the same backbone, parameters, and inference runtime.
+Same-budget EUVP tests show a modest but consistent PSNR refinement signal.
+UIEB and detection tests show cross-domain gains with task-level trade-offs.
